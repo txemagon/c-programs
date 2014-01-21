@@ -32,3 +32,28 @@ Calcular la media de todos los números introducidos por el usuario.
 Se tomarán todos los números hasta que se introduzca algo menor que 0. 
 El último número no se tomará en cuenta.
 
+
+
+Future Work
+===========
+
+```c
+#include <iostream>
+using namespace std;
+
+int a = 1;
+int f(int a) { return a; }
+int g(int x = f(a)) { return x; }
+
+int h() {
+  a = 2;
+  {
+    int a = 3;
+    return g();
+  }
+}
+
+int main() {
+  cout << h() << endl;
+}
+```
