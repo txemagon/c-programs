@@ -4,19 +4,31 @@ c Program Statements
 01 Simple Ouput
 ---------------
 
-Escribir un programa que repita 10 veces el nombre anexado
-en la invocación de la linea de comandos.
-
 Write down a program that outputs 10 times the name passed
 as a parameter at command line invocation.
 
 ```bash
 the_owl@eniac:~$ ./repeat "what does the fox say?"
 ```
+Escribir un programa que repita 10 veces el nombre anexado
+en la invocación de la linea de comandos.
+
 
 02 Mean
 -------
 
+Calculate the mean of 10 numbers given by the user.
+
 Calcular la media de 10 números proporcionados por el usuario.
 
-Figure out the mean of 10 user given numbers.
+
+03 Mean
+-------
+
+Ask numbers while the user introduces something greater or equal to 0.
+Show the mean of the given numbers.
+
+Calcular la media de todos los números introducidos por el usuario.
+Se tomarán todos los números hasta que se introduzca algo menor que 0. 
+El último número no se tomará en cuenta.
+
