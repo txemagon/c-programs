@@ -32,6 +32,22 @@ Calcular la media de todos los números introducidos por el usuario.
 Se tomarán todos los números hasta que se introduzca algo menor que 0. 
 El último número no se tomará en cuenta.
 
+04 Triangle
+-----------
+
+Given the height, build a triangle as in the example with the character provided in the invocation.
+
+    l = 4
+    
+    *
+    **
+    ***
+    ****
+
+```bash
+the_owl@eniac:~$ ./trinagle "*"
+```
+
 
 
 Future Work
