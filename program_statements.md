@@ -48,6 +48,25 @@ Given the height, build a triangle as in the example with the character provided
 the_owl@eniac:~$ ./trinagle "*"
 ```
 
+05 List of Words
+----------------
+
+Complete the following program in order to print the list of words.
+
+```c
+  int main() {
+  
+     const char *list[] = {
+       "bread", 
+       "toast",
+       "bacon"
+     };
+     
+  
+  }
+```
+
+Find the way to print the number of words defined in the list.
 
 
 Future Work
