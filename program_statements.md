@@ -66,7 +66,7 @@ Complete the following program in order to print the list of words.
   }
 ```
 
-Find the way to print the number of words defined in the list.
+Find the way (using sizeof operator) to print the number of words defined in the list.
 
 
 Future Work
