@@ -110,7 +110,7 @@ the_owl@eniac:~$ ./add 2.3 5.8
 08 Adding
 ---------
 
-Arrange the _main_ function of problem number 07 to accept a variable number of parameters.
+Arrange the _main_ function of problem number 07 to accept a variable number of arguments.
 
 
 Future Work
