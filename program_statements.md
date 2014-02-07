@@ -68,6 +68,50 @@ Complete the following program in order to print the list of words.
 
 Find the way (using sizeof operator) to print the number of words defined in the list.
 
+06 Square Border
+----------------
+
+Write a program that outputs the border of a square, given the height, like in the example:
+
+When h=4
+
+    ****
+    *  *
+    *  *
+    ****
+
+When h=7
+
+    *******
+    *     *
+    *     *
+    *     *
+    *     *
+    *     *
+    *******
+    
+
+07 Adding
+---------
+
+Define a funtion with the following signature:
+
+```c
+  double add(double,  double);
+```
+
+Function _main_ shall fetch operands from command line.
+
+
+```bash
+the_owl@eniac:~$ ./add 2.3 5.8
+```
+
+08 Adding
+---------
+
+Arrange the _main_ function of problem number 07 to accept a variable number of parameters.
+
 
 Future Work
 ===========
@@ -92,3 +136,14 @@ int main() {
   cout << h() << endl;
 }
 ```
+
+
+HTML
+====
+
+01 Links
+--------
+
+Write a little example site having _css_, _docs_ and _images_ folders with an _index.html_. _index.html_ shall link 
+to _about.html_ and _quijote.html_ inside the _docs_ directory. These pages redirect **back** to _index.html_. The former carries us to a given anchor point inside _quijote.html_
+
