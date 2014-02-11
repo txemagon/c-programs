@@ -94,7 +94,7 @@ When h=7
 07 Adding
 ---------
 
-Define a funtion with the following signature:
+Define a function with the following signature:
 
 ```c
   double add(double,  double);
