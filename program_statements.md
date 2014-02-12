@@ -112,6 +112,111 @@ the_owl@eniac:~$ ./add 2.3 5.8
 
 Arrange the _main_ function of problem number 07 to accept a variable number of arguments.
 
+09 I got the Power
+------------------
+
+Write a program to raise N numbers to the _<command line argument>_ power.
+
+```c
+#define N 0x10
+
+int power(int base, int exponent) {
+
+}
+
+void fill_in(int list[N], ...) {
+
+}
+
+int main(...) {
+
+   int list[N];
+   
+   fill_in(list, ...);
+}
+
+```
+
+```bash
+the_owl@eniac:~$ ./raise_to 3
+
+# => 1 8 27 ....
+```
+
+10 Print Backwards
+------------------
+
+Print a string backwards.
+
+```c
+int main(...) {
+
+  const char *sentence  = "The world is a vampire.";
+  const char *beginning = sentence;
+  const char *end       = sentence;
+  
+  /* Move end to the last byte in sentence*/
+
+  /* print from end to beginning */
+}
+
+```
+
+```bash
+the_owl@eniac:~$ ./print_backwards
+
+# => .eripmav a si dlrow ehT
+```
+
+11 Sort
+-------
+
+Print sorted. strcmp. 
+
+```c
+int main(...) {
+
+  const char *list[] = { "yield", "yelp"};
+  
+
+```
+
+
+12 Sort
+-------
+
+Print sorted. strcmp. 
+
+```c
+int main(...) {
+
+  const char *list[] = { "yield", "yelp", "yellow"};
+  
+
+```
+
+13 Primes
+---------
+
+A given number is prime when is not is divided by the lower primes. Find the 70 first primes.
+
+```c
+#define N 70
+
+int main() {
+
+  int primes[N];
+  primes[0] = 2;
+  int primes_found = 1;
+  
+  
+  int possible_prime = 3;
+  
+  /* Check the primality of the possible_prime and go for the next */
+
+  return EXIT_SUCCESS;
+}
+```
 
 Future Work
 ===========
