@@ -1,15 +1,22 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 #define ESTOY_EN_EL_BORDE ( fila == 0 || fila == lado - 1 || \
 	                    col  == 0 || col  == lado - 1 )
+
+char next_of(const char *palabra){
+   static int siguiente = 0;
+   return palabra[siguiente++ % strlen(palabra)];
+}
+
 int main(int argc, char *argv[]){
 
    int lado;
-   char borde = '*';
+   const char *borde = "*";
 
    if (argc > 1)
-       borde = argv[1][0];
+       borde = argv[1];
 
    printf("Lado: ");
    scanf(" %i", &lado);
@@ -17,7 +24,7 @@ int main(int argc, char *argv[]){
    for (int fila = 0; fila < lado; fila++){
        for (int col = 0; col < lado; col ++)
           if (ESTOY_EN_EL_BORDE)
-	      printf("%c", borde);
+	      printf("%c", next_of(borde) );
           else
               printf(" ");
        printf("\n");
@@ -25,23 +32,3 @@ int main(int argc, char *argv[]){
 
     return EXIT_SUCCESS;
 }
-
-/*
-
-   l=4
-
-   LLLL
-   LllL
-   LllL
-   LLLL
-
-
-   Si estoy en la primera o la ultima fila
-   O
-   Si estoy en la primera o la ultima col 
-
-   ES EL BORDE
-
-
-
-   */
