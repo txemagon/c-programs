@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define JUGADORES 4
 
@@ -19,8 +20,7 @@ int main(int argc, char *argv[]){
     int mazo = 15;
     int jugadores[JUGADORES];
 
-    for(int i=0; i<JUGADORES; i++)
-	jugadores[i] = 0;
+    memset(jugadores, 0, sizeof(jugadores));
 
     while(mazo > 0)
 	reparte_siguiente(&mazo, jugadores);
