@@ -15,6 +15,17 @@ void reparte_siguiente(
     posicion++;
 }
 
+void muestra(int mazos[JUGADORES]){
+
+    for(int i=0; i<JUGADORES; i++)
+	printf("Jugador %i: %i cartas.\n", 
+		i + 1,
+		mazos[i]);
+
+    printf("\n");
+}
+
+
 int main(int argc, char *argv[]){
 
     int mazo = 15;
@@ -25,11 +36,7 @@ int main(int argc, char *argv[]){
     while(mazo > 0)
 	reparte_siguiente(&mazo, jugadores);
 
-    for(int i=0; i<JUGADORES; i++)
-	printf("Jugador %i: %i cartas.\n", 
-		i + 1,
-		jugadores[i]);
-    printf("\n");
+    muestra(jugadores);
 
     return EXIT_SUCCESS;
 }
