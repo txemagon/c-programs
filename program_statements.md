@@ -115,7 +115,7 @@ Arrange the _main_ function of problem number 07 to accept a variable number of 
 09 I got the Power
 ------------------
 
-Write a program to raise N numbers to the _<command line argument>_ power.
+Write a program to raise N numbers to the _<command line argument>_ power of two.
 
 ```c
 #define N 0x10
