@@ -12,5 +12,13 @@ int main(int argc, char *argv[]){
 	{6, 56}
     };
 
+    for (int fila=0; fila<6; fila++){
+	for(int col=0; col<2; col++)
+	    printf("%2i ", opciones[fila][col]);
+	printf("\n");
+    }
+
+    printf("\n");
+
     return EXIT_SUCCESS;
 }
