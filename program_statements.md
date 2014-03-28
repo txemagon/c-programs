@@ -218,6 +218,18 @@ int main() {
 }
 ```
 
+14 Sort an Array of intgers
+===========================
+
+Sort this array.
+
+```c
+int main(){
+   int A[] = {22, 3, 77, 50, 40, 23, 37, 35, 22, 2, 61, 71, 0};
+}
+```
+
+
 Future Work
 ===========
 
