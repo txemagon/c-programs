@@ -229,6 +229,19 @@ int main(){
 }
 ```
 
+##RECURION
+
+15 Calculate recursively the product of the N first Natural numbers.
+
+16 Print Backwards
+
+Solve excercise number 10 using recursion.
+
+17 Continous fraction
+
+Calculate the continous fraction of 2 with 10 levels of recursion.
+
+
 
 Future Work
 ===========
