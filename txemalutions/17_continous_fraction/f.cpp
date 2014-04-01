@@ -13,12 +13,11 @@ ask_parameters(int *n, int *depth){
 
 double 
 f(int depth, double base){
-    double result = base;
 
-    for (int level=0; level<depth; level++)
-        result = base + 1 / result;
+    if (depth <= 0)
+        return base;
 
-    return result;
+    return base + 1 / f(depth - 1, base);
 }
 
 int 
