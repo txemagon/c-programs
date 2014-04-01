@@ -219,7 +219,7 @@ int main() {
 ```
 
 14 Sort an Array of intgers
-===========================
+---------------------------
 
 Sort this array.
 
@@ -229,18 +229,33 @@ int main(){
 }
 ```
 
-##RECURION
+RECURION
+=========
 
-15 Calculate recursively the product of the N first Natural numbers.
+15  Factorial
+-------------
+
+Calculate recursively the product of the N first Natural numbers.
+
 
 16 Print Backwards
+------------------
 
 Solve excercise number 10 using recursion.
 
 17 Continous fraction
+---------------------
 
-Calculate the continous fraction of 2 with 10 levels of recursion.
+Calculate the continous fraction of _n_ with 10 levels of recursion.
 
+![Continous fraction](txemalutions/a06_recursion/fraccion.png)
+
+18 e
+----
+
+Add the serie that yields e.
+
+![Continous fraction](txemalutions/a06_recursion/e.png)
 
 
 Future Work
