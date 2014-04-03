@@ -29,8 +29,8 @@ int main(int argc, char *argv[]){
 
     gets(message);
 
-    for(int i=0; message[i] != '\0'; i++)
-        printf("%c", code(message[i], key) );
+    for(char *letter = message ; *letter != '\0'; letter++)
+        printf("%c", code(*letter, key) );
 
     printf("\n");
 
