@@ -1,0 +1,7 @@
+
+digraph p_char{
+    node [shape="box", style="rounded"];
+    "?" [shape=circle];
+
+    char_pointer -> "?";
+}

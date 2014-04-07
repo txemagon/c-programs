@@ -1,0 +1,10 @@
+
+digraph struct{
+    rankdir=LR
+    node [shape="record"];
+
+    alumno [label="alumno:struct TAlumno |<f1> nombre:char [] | matematicas:int | fisica:int"];
+    nombre [shape=record, label="<f1> j | u | a | n | \\0 "]
+
+    alumno:f1 -> nombre:f1;
+}

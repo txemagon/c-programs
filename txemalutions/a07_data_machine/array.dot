@@ -1,0 +1,8 @@
+
+digraph array{
+
+    reservation [shape="record", label="<f1> | | | | "];
+    list [shape=box, style=rounded];
+
+    list -> reservation:f1;
+}
