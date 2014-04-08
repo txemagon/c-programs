@@ -1,0 +1,29 @@
+
+digraph stack{
+    rankdir=LR;
+    node [shape=record];
+
+    subgraph cluster_main { 
+        student_main [label="student::TStack | <p1> stack::int [] | next::int"];
+        reserva_main [label="<p1> | | | | | "];
+
+        label="main";
+        color=blue;
+    }
+
+    subgraph cluster_push { 
+        store_push   [label="store::TStack | <p1> stack::int [] | next::int"];
+        reserva_push [label="<p1> | | | | | "];
+        store_pt [label="store::struct TStack *"];
+
+        label = "push";
+        color=blue;
+    }
+
+    student_main:p1 -> reserva_main:p1;
+    store_push:p1   -> reserva_push:p1 [style=dashed];
+    store_push:p1   -> reserva_main:p1;
+
+
+    store_pt -> student_main;
+}
