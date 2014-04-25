@@ -1,0 +1,19 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{color}
+\usepackage{tikzpicture}
+
+\begin{document}
+
+\chapter{Física}
+\label{chap:fisica}
+
+\section{Vectores}
+
+\begin{tikzpicture}
+
+  \draw[->] (0,0) -- (2,3);
+\end{tikzpicture}
+
+\end{document}
