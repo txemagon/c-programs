@@ -8,12 +8,14 @@ int main(int argc, char *argv[]) {
     printf("lado: ");
     scanf(" %i", &lado);
 
-    for (int fila=0; fila<lado; fila++){
-	for (int cuadrado=0; cuadrado<2; cuadrado++)
-	    for(int col=0; col<lado; col++)
-		printf("%i", cuadrado);
-	printf("\n");
-    }
+    for (int cua_fila=0; cua_fila<2; cua_fila++)
+	for (int fila=0; fila<lado; fila++){
+	    for (int cua_col=0; cua_col<5; cua_col++)
+		for(int col=0; col<lado; col++)
+		    printf("%i", cua_col);
+	    printf("\n");
+	}
+
 
     return EXIT_SUCCESS;
 }
