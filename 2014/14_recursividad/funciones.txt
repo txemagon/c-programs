@@ -1,0 +1,48 @@
+## FACTORIAL
+
+6! = 6·5·4·3·2·1
+7! = 7·6·5·4·3·2·1
+7! = 7 · 6!
+
+n! = n·(n-1)!
+
+return n * factorial(n-1);
+
+## Es divisible por todos los menores.
+
+9 % 8 == 0 => Es divisible
+Si no
+9 % 7 == 0 => Es divisible
+Si no
+
+es_divisible_por_alguno_de_sus_menores
+
+  9 % 8 || es_divisible_por_aguno_menor_que(8)
+
+bool le_divide(int n, int c){
+    return n % c == 0 || le_divide(n, c-1);
+
+## Impresion de cadena.
+
+    char *p = "Hola";
+
+void imprimir(char *p){
+    printf("%c", *p);
+    imprimir(p+1);
+}
+
+## Numeros pares en una matriz
+
+int A[] = {1, 5, 7, 8};
+
+int pares_desde(int pos){
+    return (A[pos] % 2 == 0 ? 1 : 0 ) + pares_desde(pos+1);
+}
+
+## Calcular el numero e
+
+e(0) = 1/0! + 1/1! + 1/2! + 1/3! + 1/4! + 1/5!
+e(1) = 1/1! + 1/2! + 1/3! + 1/4! + 1/5!
+e(2) = 1/2! + 1/3! + 1/4! + 1/5!
+
+e(i) = 1/i! + e(i+1)
