@@ -10,11 +10,11 @@ void titulos(){
     system("figlet Polinomios");
 }
 
-double pol(const double coef[N], double x, int n){
+double pol(const double coef[N], double x, int grado){
     double pot = 1,
 	   resultado = 0;
 
-    for (int i=0; i<n; i++, pot *= x)
+    for (int i=0; i<grado; i++, pot *= x)
 	resultado += coef[i] * pot;
 
     return resultado;
