@@ -4,7 +4,7 @@
 #include <ncurses.h>
 #include <time.h>
 
-#define COPOS 0x100
+#define COPOS 50
 
 struct TCopo {
     double x;
@@ -12,11 +12,13 @@ struct TCopo {
     double v;
 };
 
-void inicializar(struct TCopo copo[COPOS], int max_x, int max_y){
+int max_y, max_x;
+
+void inicializar(struct TCopo copo[COPOS]){
     for (int i=0; i<COPOS; i++){
 	copo[i].y = rand() % max_y;
 	copo[i].x = rand() % max_x;
-	copo[i].v = rand() % 3 + 1;
+	copo[i].v = (rand() % 20 + 1) / 10.;
 
     }
 }
@@ -25,6 +27,15 @@ void mover(struct TCopo copo[COPOS]){
     for (int i=0; i<COPOS; i++){
 	copo[i].y += copo[i].v;
 	copo[i].x += rand() % 3 - 1;
+
+	if (copo[i].y  > max_y)
+	    copo[i].y -= max_y;
+
+	if (copo[i].x  > max_x)
+	    copo[i].x -= max_x;
+
+	if (copo[i].x  < 0)
+	    copo[i].x += max_x;
     }
 }
 
@@ -36,7 +47,6 @@ void pintar(struct TCopo copo[COPOS]){
 }
 
 int main(int argc, char *argv[]) {
-    int max_y, max_x;
 
     struct TCopo copo[COPOS];
 
@@ -46,7 +56,7 @@ int main(int argc, char *argv[]) {
     curs_set(false);
     getmaxyx(stdscr, max_y, max_x);
 
-    inicializar(copo, max_x, max_y);
+    inicializar(copo);
     while(1){
         mover(copo);
         pintar(copo);
