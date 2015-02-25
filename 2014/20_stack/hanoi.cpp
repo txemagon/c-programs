@@ -3,15 +3,12 @@
 #include "stack.h"
 #include "print.h"
 
-#define N 10
-#define W 21
-#define H 20
-
-
 int main(int argc, char *argv[]) {
 
+
     init_ncurses();
-    WINDOW *win = create_newwin(H, W, 10, 5);
+    refresh();
+    WINDOW *win = create_newwin(H, W, 1, 1);
 
     Stack *p = create_stack(N);
 
@@ -20,7 +17,7 @@ int main(int argc, char *argv[]) {
 
 
     for (int i=0; i<N; i++)
-	print_row(win, i, 10, p->data[i]);
+	print_row(win, i, center(W, N), p->data[i]);
     getch();
 
     

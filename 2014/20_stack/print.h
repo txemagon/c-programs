@@ -3,6 +3,13 @@
 
 #include <ncurses.h>
 
+#define N 10
+#define W 22
+#define H 20
+
+#define center(w,n) (((w) - 2 * (n) + 1) / 2 + (n) )
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
