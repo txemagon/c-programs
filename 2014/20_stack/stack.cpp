@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <strings.h>
 #include "stack.h"
 
 bool push(int element, Stack *my_stack){
@@ -23,6 +24,7 @@ Stack *create_stack(size_t max_elements){
      my_stack->summit = 0;
      my_stack->max = max_elements;
      my_stack->data = (int *) malloc(max_elements * sizeof(int));
+     bzero(my_stack->data, max_elements * sizeof(int));
      return my_stack;
  }
 

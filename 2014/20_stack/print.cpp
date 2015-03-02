@@ -18,7 +18,7 @@ WINDOW *create_newwin(int height, int width, int starty, int startx) {
 void print_row(WINDOW *win, int y, int center, int value){
 
     for (int i=center - value; i< center + value; i++)
-	mvwprintw(win, H - N + y - 2, i, "*");
+	mvwprintw(win, H - y - 2, i, "*");
     wrefresh(win);
 }
 
