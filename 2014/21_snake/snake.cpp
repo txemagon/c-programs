@@ -10,26 +10,43 @@ typedef struct TCoordenada{
 
 typedef Punto Velocidad;
 
-void mover(Velocidad v, Punto anillo[N]){
-    for (int i=N-1; i>0; i--)
-	; // Posicion de un anillo = posicion del anillo anterior.
-    ; // Posición del primer anillo (cabeza) = a la que tenía más la velocidad.
+void mover_con(Velocidad v, Punto anillo[N]){
+    for (int i=N-1; i>0; i--){
+	anillo[i].x = anillo[i-1].x;
+	anillo[i].y = anillo[i-1].y;
+    }
+
+    anillo[0].x = anillo[0].x + v.x;
+    anillo[0].y = anillo[0].y + v.y;
 }
 
-void imprimir(Punto anillo[N]){
-    // Imprimir las coordenadas.
+void imprimir_coordenadas(Punto anillo[N]){
+    printf( "Coordenadas: \n"
+	    "============\n\n");
+    for (int i=1; i<N; i++)
+	printf("%3i | %3i\n", anillo[i].x, anillo[i].y);
+    printf("\n\n");
+}
+
+void inicializar(Punto anillo[N]){
+    anillo[0].x = 10;
+    anillo[0].y = 17;
+
+    for (int i=1; i<N; i++){
+	anillo[i].x = anillo[i-1].x + 1;
+	anillo[i].y = anillo[i-1].y;
+    }
 }
 
 int main(int argc, char *argv[]) {
 
     Punto serpiente[N];
-    Velocidad v_cabeza = {0, 1};
-
+    Velocidad v_cabeza = {1, 0};
+    
+    inicializar(serpiente);
     imprimir_coordenadas(serpiente);
     mover_con(v_cabeza, serpiente);
     imprimir_coordenadas(serpiente);
-
-
 
     return EXIT_SUCCESS;
 }
