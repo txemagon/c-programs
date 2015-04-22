@@ -1,17 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-#define SABORES 3
-
-typedef enum { naranja, vainilla, limon, salir} Helado;
-
-const char *opciones[] = {
-    "Naranja",
-    "Vainilla",
-    "Limón",
-    "Salir",
-    NULL
-};
+#include "helados.h"
 
 Helado menu() {
     int opcion; 
