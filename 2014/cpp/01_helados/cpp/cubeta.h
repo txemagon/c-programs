@@ -10,6 +10,7 @@ class Cubeta {
 
     public:
     Cubeta();
+    Cubeta(double nivel_inicial);
     /* acciones */
     double cargar(double cantidad);
     double extraer(double cantidad);
