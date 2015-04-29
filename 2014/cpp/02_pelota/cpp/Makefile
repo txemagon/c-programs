@@ -1,5 +1,7 @@
+LDLIBS = -lallegro
+
 bouncy: bouncy.o pelota.o
-	g++ -o bouncy bouncy.o pelota.o -lncurses
+	g++ -o bouncy bouncy.o pelota.o $(LDLIBS)
 
 
 pelota.o: pelota.cpp
