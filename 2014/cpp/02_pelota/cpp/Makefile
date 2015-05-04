@@ -12,4 +12,8 @@ bouncy.o: bouncy.cpp
 	g++ -c bouncy.cpp
 
 
+.PHONY: clean
+
+clean:
+	$(RM) *.o *~
 

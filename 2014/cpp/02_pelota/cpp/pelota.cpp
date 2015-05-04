@@ -11,6 +11,12 @@ Pelota::Pelota ()
   this->dibujo = '*';
 }
 
+Pelota::Pelota (double x, double y=0) : x(x), y(y)
+{
+  this->vx = rand () % 3 - 1;
+  this->vy = rand () % 3 - 1;
+  this->dibujo = '*';
+}
 
 /* Accedentes */
 double

@@ -12,6 +12,7 @@ private:
 
 public:
     Pelota ();
+    Pelota (double x, double y);
   void actualizate ();
   double get_x ();
   double get_y ();
