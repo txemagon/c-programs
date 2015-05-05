@@ -1,6 +1,6 @@
 CXX = gcc
 CXXFLAGS = -g
-LDLIBS = -lallegro -lallegro_image
+LDLIBS = -lallegro -lallegro_image -lallegro_dialog
 
 DEPS = pelota.h
 OBJ = pelota.o bouncy.o
