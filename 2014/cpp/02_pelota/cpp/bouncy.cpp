@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <allegro5/allegro.h>
+#include "allegro5/allegro_image.h"
 
 #include "pelota.h"
 
@@ -17,6 +18,7 @@ main (int argc, char **argv)
   ALLEGRO_DISPLAY *display = NULL;
   ALLEGRO_EVENT_QUEUE *event_queue = NULL;
   ALLEGRO_TIMER *timer = NULL;
+  ALLEGRO_BITMAP *bm = NULL;
   bool redraw = true;
 
   Pelota pelota[N];
@@ -29,6 +31,10 @@ main (int argc, char **argv)
       return -1;
     }
 
+  if(!al_init_image_addon()) {
+      fprintf(stderr, "No se ha podido cargar el addon de imagnes.");
+      return -1;
+  }
 
   timer = al_create_timer (1.0 / FPS);
   if (!timer)
@@ -45,10 +51,20 @@ main (int argc, char **argv)
       return -1;
     }
 
+  bm = al_load_bitmap("sprites/pica.png");
+  if (!bm){
+      fprintf(stderr, "No se ha podido crear el bitmap");
+      al_destroy_timer(timer);
+      al_destroy_display(display);
+      return -1;
+  }
+
+
   event_queue = al_create_event_queue ();
   if (!event_queue)
     {
       al_destroy_timer (timer);
+      al_destroy_bitmap(bm);
       al_destroy_display (display);
       fprintf (stderr, "No se ha creado la cola de eventos.");
       return -1;
@@ -59,7 +75,7 @@ main (int argc, char **argv)
 			    al_get_display_event_source (display));
 
 
-  al_clear_to_color (al_map_rgb (0, 66, 0));
+  al_clear_to_color (al_map_rgb (0, 0, 0));
   al_flip_display ();
 
 
@@ -91,7 +107,8 @@ main (int argc, char **argv)
 
       if (redraw && al_is_event_queue_empty (event_queue))
 	{
-	  al_clear_to_color (al_map_rgb (0, 66, 0));
+	  al_clear_to_color (al_map_rgb (0, 0, 0));
+	  al_draw_bitmap(bm, 10, 10, 0);
 	  al_flip_display ();
 	  redraw = false;
 	}
