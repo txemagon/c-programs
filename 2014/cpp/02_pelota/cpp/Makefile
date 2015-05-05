@@ -1,16 +1,16 @@
+CXX = gcc
+CXXFLAGS = -g
 LDLIBS = -lallegro
 
-bouncy: bouncy.o pelota.o
-	g++ -o bouncy bouncy.o pelota.o $(LDLIBS)
+DEPS = pelota.h
+OBJ = pelota.o bouncy.o
+
+bouncy: $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDLIBS)
 
 
-pelota.o: pelota.cpp
-	g++ -c pelota.cpp
-
-
-bouncy.o: bouncy.cpp
-	g++ -c bouncy.cpp
-
+%.o: %.cpp $(DEPS)
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
 .PHONY: clean
 
