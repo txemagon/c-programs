@@ -25,4 +25,5 @@ int
 main(int argc, char **argv)
 {
     Gozer objeto;
+    return 0;
 }
