@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "nave.h"
 
-#define VLIM 0.5
+#define VLIM 1.15
 #define ROZAMIENTO 0.0625
 
 Nave::Nave ()
