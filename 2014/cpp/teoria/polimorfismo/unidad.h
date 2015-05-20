@@ -13,6 +13,8 @@ private:
   int cima;
 
 public:
+  ~Unidad();
+  void clean_up();
   bool push (Movil *movil);
   int cuantos();
   Movil *get(int index);
