@@ -16,6 +16,7 @@ public:
   ~Unidad();
   void clean_up();
   bool push (Movil *movil);
+  Movil *pop();
   int cuantos();
   Movil *get(int index);
 

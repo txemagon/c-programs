@@ -20,6 +20,8 @@ main (int argc, char **argv)
 
   while (1)
     {
+	unidad.clean_up();
+
       for (int i = 0; i < unidad.cuantos (); i++)
 	{
 	  unidad.get (i)->actualizate ();

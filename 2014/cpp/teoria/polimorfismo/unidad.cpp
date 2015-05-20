@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "unidad.h"
 
 bool
@@ -20,7 +21,10 @@ Unidad::clean_up ()
 {
     for (int i=0; i<this->cuantos(); i++)
 	if (this->get(i)->muerto)
-	    this->datos[i--] = this->pop();
+	{
+	    delete this->datos[i]; // Eliminamos la unidad muerta de memoria.
+	    this->datos[i--] = this->pop(); // sustituimos el puntero por el ultimo.
+	}
 }
 
 int
@@ -37,6 +41,7 @@ Unidad::get (int index)
 
 Unidad::~Unidad()
 {
+    fprintf(stderr, "Limpiando unidades.\n");
     while(this->cuantos())
 	delete this->pop();
 }

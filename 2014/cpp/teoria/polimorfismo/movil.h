@@ -13,6 +13,8 @@ class Movil
 
 
     public:
+	bool muerto;
+
 	Movil();
 	void actualizate();
 	virtual void pintate();

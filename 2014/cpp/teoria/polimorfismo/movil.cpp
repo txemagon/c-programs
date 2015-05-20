@@ -5,6 +5,7 @@
 int
   Movil::creados = 0;
 
+
 Movil::Movil ()
 {
   this->id = ++Movil::creados;
@@ -12,6 +13,7 @@ Movil::Movil ()
   this->y = rand () % 100;
   this->vx = (rand () % 100 + 1) / 100.;
   this->vy = (rand () % 100 + 1) / 100.;
+  this->muerto = false;
 }
 
 void
