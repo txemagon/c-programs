@@ -13,8 +13,15 @@ int main(){
     printf("%x.\n", 27);
     printf("%X.\n", 27);
 
-    printf("hola \tcaracola\n");
+    printf("hola \t\"caracola\"\n");
     printf("Tu madre \011 \x9 es pura\b\bt\a\a");
 
+    printf("\n\n");
+    printf("%.2lf\n", 0.5);
+
+    printf("%3i\t%3i\t%3i\n", 5, 50, 500);
+    printf("%3i\t%3i\t%3i\n", 50, 500, 5);
+    printf("%3i\t%3i\t%3i\n", 500, 50, 5);
+    
     return EXIT_SUCCESS;
 }
