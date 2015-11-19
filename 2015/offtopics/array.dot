@@ -1,0 +1,7 @@
+digraph array {
+    buffer [shape=box]
+    reserva [shape=record, label=" <start> 'H' | 'o' | 'l' | 'a' | <end> 0 "]
+
+    buffer -> reserva:start;
+    buffer -> reserva:end;
+}

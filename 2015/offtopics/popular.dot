@@ -1,0 +1,28 @@
+digraph popular{
+    node [shape=circle];
+
+    ruben -> movi;
+    oscar -> toni;
+    toni -> alber;
+    rober -> andi;
+    adri -> migcar;
+    jackson -> aitor;
+    cris -> cris;
+    alber -> oscar;
+    alberto -> adri;
+    angel -> alberto;
+    andi -> jose;
+    aitor -> humbi;
+    sergio -> david;
+    david -> sergio;
+    carlos -> luis;
+    luis -> carlos;
+    miguel -> jesus;
+    jesus -> miguel;
+    movi -> ruben;
+    jose -> andi;
+    adri -> david;
+    david -> adri;
+    humbi -> johni;
+    johni -> humbi;
+}
