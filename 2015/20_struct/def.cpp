@@ -38,7 +38,7 @@ int main(int argc, const char **argv){
     struct TNave bueno = { 3, 'O' };
     struct TNave malo;
 
-    struct TNave[100];
+    struct TNave nave_mala[100];
 
     Nave otra;
 
