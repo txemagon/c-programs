@@ -23,6 +23,8 @@ int main(int argc, char **argv){
     bool redraw = true;
     bool doexit = false;
 
+    /* Alegro startup */
+
     if(!al_init()) {
         al_show_native_message_box(display, "Error", "Error", "Failed to initialize allegro!",
                 NULL, ALLEGRO_MESSAGEBOX_ERROR);
@@ -34,6 +36,14 @@ int main(int argc, char **argv){
                 NULL, ALLEGRO_MESSAGEBOX_ERROR);
         return 0;
     }
+
+    if(!al_install_keyboard()){
+        al_show_native_message_box(display, "Error", "Error", "Failed to initialize al_init_image_addon!",
+                NULL, ALLEGRO_MESSAGEBOX_ERROR);
+        return 0;
+    };
+
+    /* Alegro artifact creation */
 
     display = al_create_display(SCREEN_W, SCREEN_H);
 
@@ -60,6 +70,7 @@ int main(int argc, char **argv){
         return -1;
     }
 
+    /* stitching */
     sprites = al_load_bitmap("images/xenon2_sprites.png");
 
     if(!sprites) {
@@ -73,12 +84,15 @@ int main(int argc, char **argv){
     }
 
     al_register_event_source(event_queue, al_get_display_event_source(display));
+    al_register_event_source(event_queue, al_get_keyboard_event_source());
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
-    // al_register_event_source(event_queue, al_get_keyboard_event_source());
 
     al_clear_to_color(al_map_rgb(0,0,0));
     al_flip_display();
     al_start_timer(timer);
+
+
+    /* Game loop */
 
     while(!doexit){
         ALLEGRO_EVENT ev;
