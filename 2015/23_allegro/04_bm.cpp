@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <allegro5/allegro.h>
 #include <time.h>
+#include <math.h>
 
 #define SW 800
 #define SH 600
@@ -10,6 +11,7 @@
 
 #define N 10
 #define VMAX 5
+#define VMIN .5
 
 struct Nave {
     double x;
@@ -21,6 +23,16 @@ struct Nave {
     ALLEGRO_BITMAP *img;
 };
 
+void amortigua(struct Nave *nave){
+            nave->vy *= -1;
+            nave->vy *= 0.7;
+            nave->vx *= 0.7;
+            if (fabs(nave->vx) < VMIN)
+                nave->vx = 0;
+            if (fabs(nave->vy) < VMIN)
+                nave->vy = 0;
+}
+
 void recalcular_posiciones(struct Nave nave[N]){
     for (int i=0; i<N; i++){
         nave[i].vy += .16;
@@ -28,11 +40,9 @@ void recalcular_posiciones(struct Nave nave[N]){
                 nave[i].x + nave[i].vx < 0)
             nave[i].vx *= -1;
         if ( nave[i].y + nave[i].vy + nave[i].height > SH ||
-                nave[i].y + nave[i].vy < 0){
-            nave[i].vy *= -1;
-            nave[i].vy *= 0.7;
-            nave[i].vx *= 0.7;
-        }
+                nave[i].y + nave[i].vy < 0)
+            amortigua(&nave[i]);
+
         nave[i].x += nave[i].vx;
         nave[i].y += nave[i].vy;
     }
@@ -116,6 +126,8 @@ int main(int argc, const char **argv){
         //      Pintar
     }
 
+    for (int i=0; i<N; i++)
+        al_destroy_bitmap(nave[i].img);
     al_destroy_timer(alarma);
     al_destroy_display(ventana);
     al_destroy_event_queue(mensajes);
