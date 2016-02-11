@@ -3,6 +3,7 @@
 #include "allegro5/allegro_image.h"
 #include "allegro5/allegro_native_dialog.h"
 #include "game.h"
+#include "physics.h"
 
 #define FPS 60.
 
@@ -15,6 +16,7 @@ enum MYKEYS {
 
 int main(int argc, char **argv){
 
+    struct Movil nave;
     ALLEGRO_DISPLAY *display = NULL;
     ALLEGRO_BITMAP  *sprites   = NULL;
     ALLEGRO_EVENT_QUEUE *event_queue = NULL;
@@ -87,6 +89,10 @@ int main(int argc, char **argv){
     al_register_event_source(event_queue, al_get_keyboard_event_source());
     al_register_event_source(event_queue, al_get_timer_event_source(timer));
 
+
+    /* Init game objects */
+    init(sprites, &nave);
+
     al_clear_to_color(al_map_rgb(0,0,0));
     al_flip_display();
     al_start_timer(timer);
@@ -145,14 +151,19 @@ int main(int argc, char **argv){
             }
         }
 
+        update_physics(key, &nave);
+
         if(redraw && al_is_event_queue_empty(event_queue)) {
             redraw = false;
-            al_draw_bitmap(sprites,200,200,0);
+            //al_draw_bitmap(sprites,200,200,0);
+            al_draw_bitmap(nave.img, 100, 100, 0);
+            al_flip_display();
         }
 
     }
 
-    al_flip_display();
+    /* Housekeeping */
+
     al_rest(2);
 
     al_destroy_display(display);
