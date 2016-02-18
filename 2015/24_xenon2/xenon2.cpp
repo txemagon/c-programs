@@ -6,13 +6,10 @@
 #include "physics.h"
 
 #define FPS 60.
+#define ROLL 0.8
 
 const int SCREEN_W = 800;
 const int SCREEN_H = 600;
-
-enum MYKEYS {
-       KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT
-};
 
 int main(int argc, char **argv){
 
@@ -74,6 +71,7 @@ int main(int argc, char **argv){
 
     /* stitching */
     sprites = al_load_bitmap("images/xenon2_sprites.png");
+    al_convert_mask_to_alpha(sprites, al_map_rgb(255, 0, 255));
 
     if(!sprites) {
         al_show_native_message_box(display, "Error", "Error", "Failed to load sprites!",
@@ -91,10 +89,7 @@ int main(int argc, char **argv){
 
 
     /* Init game objects */
-    init(sprites, &nave);
-
-    al_clear_to_color(al_map_rgb(0,0,0));
-    al_flip_display();
+    init(sprites, &nave); //
     al_start_timer(timer);
 
 
@@ -112,37 +107,37 @@ int main(int argc, char **argv){
         else if (ev.type == ALLEGRO_EVENT_KEY_DOWN) {
             switch(ev.keyboard.keycode) {
                 case ALLEGRO_KEY_UP:
-                    key[KEY_UP] = true;
+                    key[KEY_THROTTLE] = true;
                     break;
 
                 case ALLEGRO_KEY_DOWN:
-                    key[KEY_DOWN] = true;
+                    key[KEY_BRAKE] = true;
                     break;
 
                 case ALLEGRO_KEY_LEFT:
-                    key[KEY_LEFT] = true;
+                    key[KEY_ROTATE_LEFT] = true;
                     break;
 
                 case ALLEGRO_KEY_RIGHT:
-                    key[KEY_RIGHT] = true;
+                    key[KEY_ROTATE_RIGHT] = true;
                     break;
             }
         } else if (ev.type == ALLEGRO_EVENT_KEY_UP) {
             switch(ev.keyboard.keycode) {
                 case ALLEGRO_KEY_UP:
-                    key[KEY_UP] = false;
+                    key[KEY_THROTTLE] = false;
                     break;
 
                 case ALLEGRO_KEY_DOWN:
-                    key[KEY_DOWN] = false;
+                    key[KEY_BRAKE] = false;
                     break;
 
                 case ALLEGRO_KEY_LEFT:
-                    key[KEY_LEFT] = false;
+                    key[KEY_ROTATE_LEFT] = false;
                     break;
 
                 case ALLEGRO_KEY_RIGHT:
-                    key[KEY_RIGHT] = false;
+                    key[KEY_ROTATE_RIGHT] = false;
                     break;
 
                 case ALLEGRO_KEY_ESCAPE:
@@ -151,20 +146,22 @@ int main(int argc, char **argv){
             }
         }
 
-        update_physics(key, &nave);
 
         if(redraw && al_is_event_queue_empty(event_queue)) {
             redraw = false;
+            update_physics(key, &nave);
+            al_clear_to_color(al_map_rgb(0,0,0));
             //al_draw_bitmap(sprites,200,200,0);
-            al_draw_bitmap(nave.img, 100, 100, 0);
+            al_draw_bitmap(nave.img[2 + (int) (nave.v.x / ROLL) ],
+                    SCREEN_W / 2 + nave.r.x,
+                    SCREEN_H - 50 - nave.r.y,
+                    0);
             al_flip_display();
         }
 
     }
 
     /* Housekeeping */
-
-    al_rest(2);
 
     al_destroy_display(display);
     al_destroy_timer(timer);
