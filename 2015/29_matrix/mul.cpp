@@ -13,10 +13,10 @@ int main(int argc, const char **argv){
     int C[M][N];
 
     // Pedir lo valores de la matriz
-    rellenar(A, M, P);
-    imprimir(A, M, P);
-    rellenar(B, P, N);
-    imprimir(B, P, N);
+    rellenar((int *)A, M, P, "primera: A");
+    imprimir((int *)A, M, P, "A");
+    rellenar((int *)B, P, N, "segunda: B");
+    imprimir((int *)B, P, N, "B");
 
     // Hacer la multiplicación.
     // Calcular cada i,j de C
@@ -24,12 +24,12 @@ int main(int argc, const char **argv){
         for (int j=0; j<N; j++){
             C[i][j] = 0;
             for (int k=0; k<P; k++)
-                C[i][j] += A[i][k] * B[k][j]
+                C[i][j] += A[i][k] * B[k][j];
         }
 
 
     // Mostrar el resultado.
-    imprimir(C, M, N);
+    imprimir((int *)C, M, N, "Resultado");
 
     return EXIT_SUCCESS;
 }

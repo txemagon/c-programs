@@ -1,9 +1,9 @@
 #ifndef __GARTIN_MARRIX_H__
 #define  __GARTIN_MARRIX_H__
 
-extern {
-   void rellenar(int *matriz, int filas, int col);
-   void imprimir(int *matriz, int filas, int col);
+extern "C"{
+   void rellenar(int *matriz, int filas, int col, const char *nombre);
+   void imprimir(int *matriz, int filas, int col, const char *nombre);
 }
 
 #endif
