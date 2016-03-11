@@ -26,6 +26,7 @@ bool push(struct Pila *pila, int dato){
         return false;
 
     pila->data[pila->cima++] = dato;
+
     return true;
 }
 
