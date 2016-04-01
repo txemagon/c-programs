@@ -16,16 +16,20 @@ bool comprobar_letra_a_letra(char tablero[], const char *patron, int offset){
 
 int main(int argc, const char **argv){
     char tablero[] = "arpedpedrozuloaga";
-    const char *patron = "pedro";
     bool palabra_encontrada = false;
 
+    if (argc < 2){
+        fprintf(stderr, "Usage: %s <patron de busqueda>\n\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+
     for (   int offset=0;
-            tablero[offset + (int) strlen(patron)] != '\0' && !palabra_encontrada;
+            tablero[offset + (int) strlen(argv[1])] != '\0' && !palabra_encontrada;
             offset++)
-        palabra_encontrada = comprobar_letra_a_letra(tablero, patron, offset);
+        palabra_encontrada = comprobar_letra_a_letra(tablero, argv[1], offset);
 
     if (palabra_encontrada)
-        printf("%s\n", patron);
+        printf("%s\n", argv[1]);
 
     return EXIT_SUCCESS;
 }
