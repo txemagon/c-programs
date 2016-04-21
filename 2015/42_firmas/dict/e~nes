@@ -1,0 +1,7 @@
+#!/bin/csh
+mv espa~nol.aff espa~nol.aff.e\'ne
+mv espa~nol.words espa~nol.words.e\'ne
+mv espa~nol.words+ espa~nol.words+.e\'ne
+sed -f sed.sc < espa~nol.aff.e\'ne >espa~nol.aff
+sed -e "s/'n/~n/g" <espa~nol.words.e\'ne | sed -e "s/'N/~N/g" > espa~nol.words
+sed -e "s/'n/~n/g" <espa~nol.words+.e\'ne | sed -e "s/'N/~N/g" > espa~nol.words+

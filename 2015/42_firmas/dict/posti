@@ -1,0 +1,71 @@
+#!/bin/sh
+
+ECHO=/bin/echo
+SUF_HASH=".hash"
+SUF_AFF=".aff"
+HASH_FILE=$1$SUF_HASH
+AFF_FILE=$1$SUF_AFF
+
+if [ $# != 1 ]
+then
+	$ECHO "Usage: posti file"
+	exit 1
+fi
+
+if [ ! -f $HASH_FILE ]
+then
+	$ECHO "$1 does not exists"
+	exit 1
+fi
+
+ispell -vv > /tmp/is$$ 2>&1
+
+dir=`grep '^[ 	]*LIBDIR' /tmp/is$$ | awk '{print $3}' | sed -e 's/\"//g'`
+
+rm -f /tmp/is$$
+
+if [ ! -d $dir ]
+then
+	$ECHO "$dir is not a directory"
+fi
+
+$ECHO "$1 will be installed in $dir."
+$ECHO "Please confirm (y/n) \c"
+read aux
+
+if [ "Y$aux" != "YY" -a "Y$aux" != "Yy" ]; then
+	$ECHO "Installation cancelled"
+	exit 1
+fi
+
+if [ -f $dir/$HASH_FILE ]
+then
+	mv $dir/$HASH_FILE $dir/${HASH_FILE}_OLD
+	$ECHO "Old $HASH_FILE file saved as $dir/${HASH_FILE}_OLD"
+fi
+
+if [ -f $dir/$AFF_FILE ]
+then
+	mv $dir/$AFF_FILE $dir/${AFF_FILE}_OLD
+	$ECHO "Old $AFF_FILE file saved as $dir/${AFF_FILE}_OLD"
+fi
+
+cp $HASH_FILE $AFF_FILE $dir
+
+if [ $? != 0 ]
+then
+	$ECHO "$1 is not installed"
+	exit 1
+fi
+
+chmod 444 $dir/$AFF_FILE $dir/$HASH_FILE
+
+if [ $? != 0 ]
+then
+	$ECHO "$1 is not installed"
+	rm -f $dir/$AFF_FILE $dir/$HASH_FILE
+	exit 1
+fi
+
+
+exit 0
