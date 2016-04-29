@@ -1,10 +1,9 @@
-
-#ifndef __HEADER_H__
-#define __HEADER_H__
+#ifndef __BMP_H__
+#define __BMP_H__
 
 #pragma pack(1)
 
-struct BMP {
+struct BMPHeader {
     unsigned short magic;  // Ojo. Va sin marca de fin.
     unsigned file_size;
     unsigned res1;
@@ -22,7 +21,20 @@ struct BMP {
     unsigned important_colors;
 };
 
-extern void show(struct BMP cabecera);
+struct Color{
+    char red;
+    char green;
+    char blue;
+};
+
+struct BMP {
+    struct BMPHeader *header;
+    struct Color *data;
+};
+
+extern struct BMP load_bmp(const char * file_name);
+extern void show_bmp_header(struct BMPHeader header);
+extern void destroy_bmp(struct BMP image);
 
 #endif
 
