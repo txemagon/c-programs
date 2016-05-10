@@ -1,23 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-#define MAX 0x1000
-
-int datos[MAX];
-int cima = 0;
-
-void imprime(int datos[MAX]){
-    for (int i=0; i<cima; i++)
-        printf(" %i ", datos[i]);
-    printf("\n");
-}
-
-void intercambia(int datos[MAX], int pos1, int pos2){
-    int aux = datos[pos1];
-    datos[pos1] = datos[pos2];
-    datos[pos2] = aux;
-}
-
 void quicksort(int datos[MAX], int ini, int ulti){
     int pivote = datos[ulti];
     int izq = ini;
@@ -47,16 +27,3 @@ void quicksort(int datos[MAX], int ini, int ulti){
 
 }
 
-int main(int argc, const char **argv){
-
-    int buffer = 0;
-
-    while (scanf(" %i", &buffer) != EOF)
-        datos[cima++] = buffer;
-
-    imprime(datos);
-    quicksort(datos, 0, cima-1);
-    imprime(datos);
-
-    return EXIT_SUCCESS;
-}
