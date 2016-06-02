@@ -12,12 +12,11 @@ void crear_soluciones(struct Generacion *generacion) {
 }
 
 void evalua(struct Generacion *generacion, struct Stack aforo){
-    int n_autobuses = aforo.cima;
-    int *autobuses = (int *) malloc( n_autobuses * sizeof(int) );
+    int *autobuses = (int *) malloc( generacion->n_autobuses * sizeof(int) );
 
     for (int i=0; i<INDIVIDUOS; i++){
         generacion->solucion[i].castigo = 0;
-        bzero(autobuses, )
+        bzero(autobuses, generacion->n_autobuses * sizeof(int));
     }
 
     free(autobuses);
