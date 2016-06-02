@@ -9,10 +9,10 @@ struct Stack {
    int huecos;
 };
 
-
-extern struct Stack *pila crea(void);
+extern void init(struct Stack *nueva);
 extern bool push(int alumnos, struct Stack* pila);
 extern int pop(struct Stack* pila);
+extern void show(struct Stack pila);
 
 
 #endif

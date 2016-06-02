@@ -1,16 +1,15 @@
 #include "pila.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
 
-struct Stack *crea(){
-    struct Stack *nueva =  (struct Stack *) malloc(H_INICIAL*sizeof(int));
+void init(struct Stack *nueva){
     if (nueva){
        nueva->cima = 0;
        nueva->huecos = H_INICIAL;
+       nueva->data =  (int *) malloc(H_INICIAL*sizeof(int));
        bzero(nueva->data, H_INICIAL * sizeof(int));
     }
-
-    return nueva;
 }
 
 bool push(int alumnos, struct Stack *pila){
@@ -23,6 +22,13 @@ bool push(int alumnos, struct Stack *pila){
 }
 
 
-int pop(struct stack *pila){
+int pop(struct Stack *pila){
+    if (!pila->cima)
+        return -1;
     return pila->data[--pila->cima];
+}
+
+void show(struct Stack pila){
+    for (int i=0; i<pila.cima; i++)
+        printf("%i\n", pila.data[i]);
 }
