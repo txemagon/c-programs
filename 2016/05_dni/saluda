@@ -1,0 +1,6 @@
+#!/bin/bash
+# saluda
+
+a=juan
+echo "Hola, $a"
+
