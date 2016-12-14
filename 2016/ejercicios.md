@@ -57,8 +57,6 @@
 
 1. En una clase con 17 alumnos por fila y  10 filas (Sí, 170 alumnos. ¡Qué desconcierto en la fp!) haz un programa que pregunte el número de lista e indique al alumno la fila y la columna que le corresponden (los alumnos empiezan a numerar por el número 1).
 
-### Relacionales
-### Lógicos
 ### A nivel de Bits
 
 1. Haz un programa que convierta cualquier número expresado en decimal a cualquier base menor de diez.
@@ -74,12 +72,16 @@
 1. Imprime el código ASCII poniendo el número y el carácter que les corresponde.
 1. Haz un programa que imprima tu nombre.
 1. Rellena un array de caracteres con dos palabras que te de el usuario y hayan quedado almacenadas por separado. Usa sprintf.
-
+1. Imprime un fichero carácter a carácter. fgetc.
+1. Imprime todas las líneas de un fichero que consistan únicamente una palabra entre corchetes.
+1. Imprime el primer número de línea de un fichero en la que se encuentra la palabra que quiere buscar el usuario.
 
 1. Pregunta al usuario su número favorito y guárdalo en una variable.
 1. Pregunta al usuario su nombre y guárdalo en un array de carácteres.
 1. Pregunta al usuario su nombre y apellidos y guárdalo en un array de caracteres.
 1. Pregunta al usuario su nombre y apellidos y guárdalo en un array de 15 caracteres. Asegúrate de que no hay desbordamiento.
+1. Haz un programa que lea los Hi Scores de un fichero y los imprima en pantalla
+1. Carga una lista de 50 nombres en un array de 50x100.
 
 ## Estructuras de Control
 
