@@ -83,6 +83,8 @@
 1. Haz un programa que lea los Hi Scores de un fichero y los imprima en pantalla
 1. Carga una lista de 50 nombres en un array de 50x100.
 
+1. Imprime la longitud de un fichero. Usa rewind
+
 ## Estructuras de Control
 
 ### Estructuras Alternativas
