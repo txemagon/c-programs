@@ -1,0 +1,16 @@
+/*
+  AHORCADO
+*/
+
+/********************************************************************
+                      INSTRUCCIONES
+*********************************************************************
+
+1.- Elegir una palabra
+2.- Poner una celda vacía por cada letra. ¿?
+3.- Preguntarle una letra al usuario.
+4.- Comparas la letra del usuario con la n letra de la palabra de
+    referencia y si son iguales lo pones en la celda n de
+    la buscada.
+5.- n++ => paso 4 (hasta la ultima letra)
+6.- => paso 3 (hasta que la palabra este adivinada o lim errores)
