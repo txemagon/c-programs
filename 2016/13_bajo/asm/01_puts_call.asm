@@ -4,7 +4,7 @@
 ; nasm -felf64 01_puts_call.asm && gcc 01_puts_call.o -o puts_call && ./puts_call
 ; --------------------------------------------------------------------------------
 
-    _global main
+    global main
     extern puts
 
     section .text
@@ -26,3 +26,4 @@ mensaje:
 ; Sólo se preservan los registros rbp, rbx, r12, r13, r14, r15
 ; El valor de retorno está en rdx:rax o xmm1:xmm0. O solo en los últimos rax, xmm0
 
+; vim: ft=nasm
