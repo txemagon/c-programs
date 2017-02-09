@@ -1,16 +1,24 @@
-        push   rbp
+main:
+        push   rbp                        ; Preprotocolo
         mov    rbp,rsp
-        mov    DWORD PTR [rbp-0x14],ed
+
+        mov    DWORD PTR [rbp-0x14],edi   ; Mover los parámetros
         mov    QWORD PTR [rbp-0x20],rsi
-        mov    DWORD PTR [rbp-0x4],0x7
-        cmp    DWORD PTR [rbp-0x4],0x7
-        jle    0x4004f7 <main+33>
+
+        mov    DWORD PTR [rbp-0x4],0x7    ; Variables locales
+
+        cmp    DWORD PTR [rbp-0x4],0x7    ; if (a > 7)
+        jle    false                      ; Si se cumple lo contrario salto al falso
+true:
         mov    DWORD PTR [rbp-0x4],0x2
-        jmp    0x4004fe <main+40>
+        jmp    fin
+false:
         mov    DWORD PTR [rbp-0x4],0x3
-        mov    eax,0x0
+fin:
+; Continua el programa
+        mov    eax,0x0A                   ; Valor de retorno de main
         pop    rbp
-        ret      
+        ret
 
 ; vim: ft=nasm
 
