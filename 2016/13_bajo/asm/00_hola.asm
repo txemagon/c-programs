@@ -23,3 +23,5 @@ _start:
     syscall
 mensaje:
     db "Hola Mundo", 10               ; 10 es el retorno de carro.
+
+; vim: ft=nasm
