@@ -11,6 +11,8 @@ extern "C"{
 #endif
 void titulo();
 void pinta_entorno(double x);
+void pedir_polinomio(struct Polinomio *);
+void pedir_punto(double *x);
 #ifdef __cplusplus
 }
 #endif

@@ -7,12 +7,13 @@
 
 int main(int argc, char *argv[]){
     double x;
+    struct Polinomio pol;
 
     titulo();
-    printf("\n\tx: ");
-    scanf(" %lf", &x);
+    pedir_polinomio(&pol);
+    pedir_punto(&x);
     pinta_entorno(x);
-    printf("f'(x=%.2lf) = %.2lf\n", x, derivada(x));
+    printf("f'(x=%.2lf) = %.2lf\n", x, derivada(pol, x));
 
     return EXIT_SUCCESS;
 }
