@@ -37,8 +37,8 @@ int main(int argc, char *argv[]){
         tanque[1].s.x = 80.;
 
         curs_set(1);
-        mvprintw(1, 1, "V. inicial (vx, vy): ");
-        scanw(" ( %lf , %lf )", &tanque[turno].v.x, &tanque[turno].v.y);
+        mvprintw(1, 1, "[Tanque %i] V. inicial (vx, vy): ", turno + 1);
+        scanw(" ( %lf , %lf %*[)]", &tanque[turno].v.x, &tanque[turno].v.y);
         curs_set(0);
 
 
