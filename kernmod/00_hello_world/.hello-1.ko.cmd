@@ -1,0 +1,1 @@
+cmd_/home/txema/work/c-programs/kernmod/00_hello_world/hello-1.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.13.0-107-generic/scripts/module-common.lds --build-id  -o /home/txema/work/c-programs/kernmod/00_hello_world/hello-1.ko /home/txema/work/c-programs/kernmod/00_hello_world/hello-1.o /home/txema/work/c-programs/kernmod/00_hello_world/hello-1.mod.o
