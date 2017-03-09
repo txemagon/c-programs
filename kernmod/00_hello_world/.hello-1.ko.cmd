@@ -1,1 +1,0 @@
-cmd_/home/imasen/work/c-programs/kernmod/00_hello_world/hello-1.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/imasen/work/c-programs/kernmod/00_hello_world/hello-1.ko /home/imasen/work/c-programs/kernmod/00_hello_world/hello-1.o /home/imasen/work/c-programs/kernmod/00_hello_world/hello-1.mod.o
