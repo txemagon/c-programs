@@ -21,7 +21,9 @@ int main(int argc, char *argv[]){
 
     /* Calculamos la media */
     double media = 0;     // Esto es C++. En c, arriba todas las declaraciones.
-    for (int desplazamiento=0; desplazamiento<n_alumnos; desplazamiento++)
+    for (int desplazamiento=0;
+            desplazamiento<n_alumnos;
+            desplazamiento++)
         media += nota[desplazamiento]; // Equivale a: media += *(nota + desplazamiento)
     media /= n_alumnos;
     printf("Media: %.2lf\n", media);
