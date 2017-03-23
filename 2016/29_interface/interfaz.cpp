@@ -9,6 +9,9 @@
 #define HSPACE 1
 #define VSPACE 1
 
+#define STR(x) #x
+#define FORMAT_STR(w) "%" STR(w) "i"
+
 
 void graf_on() { initscr(); }
 void graf_off(){ endwin();  }
@@ -52,14 +55,15 @@ void grid(int w, int h){
 }
 
 
-void pon_numero(int n, int fila, int col){
-    mvprintw(YBASE + fila * (2 + 2 * VSPACE) + 1 + VSPACE,
-            XBASE  + col  * (1 + 2 * HSPACE + CWIDTH) + HSPACE + 1 , "%i", n);
+void pon_numero(int fila, int col, int n){
+    mvprintw(YBASE + 1 + VSPACE + fila * (2 + 2 * VSPACE),
+             XBASE + 1 + HSPACE + col  * (1 + 2 * HSPACE + CWIDTH),
+             FORMAT_STR(CWIDTH), n);
 }
 
 void muestra(int matriz[N][N]){
     grid(N, N);
-    for (int f=1; f<2; f++)
+    for (int f=0; f<N; f++)
         for (int c=0; c<N; c++)
             pon_numero(f, c, matriz[f][c]);
     refresh();
