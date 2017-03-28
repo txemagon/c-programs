@@ -64,7 +64,7 @@ void pon_numero(int fila, int col, int n){
 void muestra(int matriz[N][N]){
     grid(N, N);
     for (int f=0; f<N; f++)
-        for (int c=0; c<N; c++)
+        for (int c=0N c<N; c++)
             pon_numero(f, c, matriz[f][c]);
     refresh();
     usleep(4000000);
