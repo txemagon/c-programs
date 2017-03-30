@@ -21,5 +21,5 @@ $(TARGET): $(OBJS)
 clean:
 	$(RM) *.o
 
-dist: clean
+dist: $(TARGET) clean
 	mv $(TARGET) $(DDIR)
