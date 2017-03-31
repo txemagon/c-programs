@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC = g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -g -I$(IDIR)$/;"	m
+DDIR	Makefile	/^DDIR = ..\/dist$/;"	m
+DEPS	Makefile	/^DEPS = $(wildcard $(IDIR)\/*.h)$/;"	m
+IDIR	Makefile	/^IDIR = ..\/include$/;"	m
+MAX_LEN	../include/pila.h	7;"	d
+MAX_PILA	../include/pila.h	8;"	d
+MAX_X	../include/pila.h	9;"	d
+MAX_Y	../include/pila.h	10;"	d
+OBJS	Makefile	/^OBJS = $(patsubst %.cpp, %.o, $(wildcard *.cpp))$/;"	m
+QNAVES	main.cpp	6;"	d	file:
+QTANKS	main.cpp	7;"	d	file:
+TARGET	Makefile	/^TARGET = nave$/;"	m
+TMovil	../include/pila.h	/^struct TMovil{$/;"	s
+TPila	../include/pila.h	/^struct TPila{$/;"	s
+__GENERAL_H__	../include/general.h	2;"	d
+__PILA_H__	../include/pila.h	2;"	d
+actualiza	../include/pila.h	/^    void (*actualiza)(void);$/;"	m	struct:TMovil
+actualiza	pila.cpp	/^void actualiza(struct TPila *lista) {$/;"	f
+actualizar_nave	pila.cpp	/^void actualizar_nave(){$/;"	f
+actualizar_tanque	pila.cpp	/^void actualizar_tanque(){$/;"	f
+cima	../include/pila.h	/^    int cima;$/;"	m	struct:TPila
+crear_nave_aleatoria	pila.cpp	/^crear_nave_aleatoria ()$/;"	f
+crear_tanque_aleatorio	pila.cpp	/^crear_tanque_aleatorio ()$/;"	f
+data	../include/pila.h	/^    struct TMovil *data[MAX_PILA];$/;"	m	struct:TPila	typeref:struct:TPila::TMovil
+main	main.cpp	/^main ()$/;"	f
+mostrar	pila.cpp	/^void mostrar(struct TMovil *dato){$/;"	f
+nombre	../include/pila.h	/^    char nombre[MAX_LEN];$/;"	m	struct:TMovil
+pop	pila.cpp	/^pop (struct TPila *pila)$/;"	f
+push	pila.cpp	/^push (struct TPila *pila, struct TMovil *dato)$/;"	f
+ver	pila.cpp	/^void ver(struct TPila pila){$/;"	f
+x	../include/pila.h	/^    double x;$/;"	m	struct:TMovil
+y	../include/pila.h	/^    double y;$/;"	m	struct:TMovil
