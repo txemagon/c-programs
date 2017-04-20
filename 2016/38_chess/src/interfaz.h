@@ -10,8 +10,8 @@
 #define YBASE 5
 
 #define CWIDTH 1
-#define HSPACE 1
-#define VSPACE 1
+#define HSPACE 0
+#define VSPACE 0
 
 
 #ifdef __cplusplus

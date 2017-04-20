@@ -17,6 +17,7 @@ main (int argc, char *argv[])
   do
     {
       load (BOARD_FN, chess_board);
+      title("chess");
       dump (chess_board);
       do
 	{

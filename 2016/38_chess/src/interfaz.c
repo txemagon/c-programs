@@ -7,12 +7,12 @@
 
 
 void
-pintar_fila (int f, int w, int cini, int cmed, int cfin, int space)
+pintar_fila (int f, int w, const char *cini, const char *cmed, const char *cfin, int space)
 {
     int c, r, rv;
   int vl = 1 + 2 * VSPACE + 1;
   MOVE (YBASE + vl * f, XBASE);
-  putchar (cini);
+  printf ("%s", cini);
   for (c = 0; c < w - 1; c++)
     {
       for (r = 0; r < HSPACE * 2 + CWIDTH; r++)
@@ -21,7 +21,7 @@ pintar_fila (int f, int w, int cini, int cmed, int cfin, int space)
     }
   for (r = 0; r < HSPACE * 2 + CWIDTH; r++)
     printf ("%s", ACS_HLINE);
-  putchar ( cfin);
+  printf ("%s",  cfin);
 
   if (space)
     {
@@ -32,7 +32,7 @@ pintar_fila (int f, int w, int cini, int cmed, int cfin, int space)
 	  for (c = 0; c < w; c++)
 	    {
 	      for (r = 0; r < HSPACE * 2 + CWIDTH; r++)
-		putchar (' ');
+		printf ("%s", " ");
 	      printf ("%s", ACS_VLINE);
 	    }
 	}
@@ -63,6 +63,7 @@ pon_numero (int fila, int col, char n)
   MOVE (YBASE + 1 + VSPACE + fila * (2 + 2 * VSPACE),
 	    XBASE + 1 + HSPACE + col * (1 + 2 * HSPACE + CWIDTH));
   printf(FORMAT_STR (CWIDTH), n);
+  fflush(stdout);
 }
 
 void

@@ -11,6 +11,14 @@
 const char *good_chars = "TCAKQP-";
 
 void
+title (const char *s)
+{
+    char command[MAX_CAR];
+    sprintf( command, "toilet -fpagga --gay %s", s);
+    system("clear");
+    system(command);
+}
+void
 print_usage (FILE * output)
 {
   fprintf (output, USAGE, program_invocation_short_name);
