@@ -2,6 +2,7 @@
 #define __IO_H__
 
 #include "general.h"
+#include "interfaz.h"
 
 
 #ifdef __cplusplus
