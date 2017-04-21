@@ -60,13 +60,13 @@ grid (int w, int h)
 void
 print_number (int fila, int col, char n)
 {
-  printf (SAVE_CURSOR);
+  ANSI (SAVE_CURSOR);
   MOVE (YBASE + 1 + VSPACE + fila * (2 + 2 * VSPACE),
 	XBASE + 1 + HSPACE + col * (1 + 2 * HSPACE + CWIDTH));
   printf (FORMAT_STR (CWIDTH), n);
   fflush (stdout);
 
-  printf (RESTORE_CURSOR);
+  ANSI (RESTORE_CURSOR);
 }
 
 void
@@ -74,17 +74,14 @@ grid_show (char matriz[N][N])
 {
   int f, c;
 
-  printf (SAVE_CURSOR);
-  printf (FAINT_ON);
+  ANSI (FAINT_ON);
   grid (N, N);
-  printf (FAINT_OFF);
+  ANSI (FAINT_OFF);
 
-  printf (INVER_ON);
+  ANSI (INVER_ON);
   for (f = 0; f < N; f++)
     for (c = 0; c < N; c++)
       print_number (f, c, matriz[f][c]);
+  ANSI (INVER_OFF);
   printf ("\n");
-  printf (INVER_OFF);
-
-  printf (RESTORE_CURSOR);
 }

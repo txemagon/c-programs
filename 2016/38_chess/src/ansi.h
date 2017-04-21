@@ -1,27 +1,29 @@
 #ifndef __ANSI_COLORS_
 #define __ANSI_COLORS_
 
-#define ANSI_COLOR_RESET   "\x1b[0m"
+#define AC_RESET           "\x1b[0m"
+#define ANSI_COLOR_RESET   printf ( AC_RESET); fflush(stdout);
 
-#define ANSI_COLOR_BLACK   "\x1b[30m"
-#define ANSI_COLOR_RED     "\x1b[31m"
-#define ANSI_COLOR_GREEN   "\x1b[32m"
-#define ANSI_COLOR_YELLOW  "\x1b[33m"
-#define ANSI_COLOR_BLUE    "\x1b[34m"
-#define ANSI_COLOR_MAGENTA "\x1b[35m"
-#define ANSI_COLOR_CYAN    "\x1b[36m"
-#define ANSI_COLOR_WHITE   "\x1b[37m"
-#define ANSI_COLOR_DFLT    "\x1b[39m"
 
-#define ANSI_BCKGND_BLACK   "\x1b[40m"
-#define ANSI_BCKGND_RED     "\x1b[41m"
-#define ANSI_BCKGND_GREEN   "\x1b[42m"
-#define ANSI_BCKGND_YELLOW  "\x1b[43m"
-#define ANSI_BCKGND_BLUE    "\x1b[44m"
-#define ANSI_BCKGND_MAGENTA "\x1b[45m"
-#define ANSI_BCKGND_CYAN    "\x1b[46m"
-#define ANSI_BCKGND_WHITE   "\x1b[47m"
-#define ANSI_BCKGND_DFLT    "\x1b[49m"
+/* colors */
+#define AC_BLACK   0
+#define AC_RED     1
+#define AC_GREEN   2
+#define AC_YELLOW  3
+#define AC_BLUE    4
+#define AC_MAGENTA 5
+#define AC_CYAN    6
+#define AC_WHITE   7
+#define AC_DFLT    9
+
+/* Variations */
+#define FORE_NORMAL        3
+#define FORE_LIGHT         9
+#define BACK_NORMAL        4
+#define BACK_LIGHT         10
+
+#define ANSI_COLOR(color, variation) "\x1b[" #variation #color "m"
+#define ANSI_SWITCH_COLOR(color, variation)   printf ( ANSI_COLOR(color, variation) ); fflush(stdout);
 
 
 #define BOLD_ON            "\x1b[1m"
@@ -37,8 +39,17 @@
 
 #define ANSI_RESET         "\x1b[0m"
 
-#define SAVE_CURSOR        "\x1b[s"
-#define RESTORE_CURSOR     "\x1b[u"
+// #define SAVE_CURSOR        "\x1b[s"
+// #define RESTORE_CURSOR     "\x1b[u"
+
+// Go for: infocmp $TERM | grep -Eo '( sc=\\E.. )|( rc=\\E..)'
+#define SAVE_CURSOR        "\0337"
+#define RESTORE_CURSOR     "\0338"
+#define CURSOR_OFF         "\x1b[?25l"
+#define CURSOR_ON          "\x1b[?25h"
+
+
+#define ANSI(seq)          printf ( seq ); fflush (stdout);
 
 #define MOVE(r,c) printf("\x1b[%i;%if", r, c);
 #define GO_DOWN(n) printf("\x1b[%iB", n);

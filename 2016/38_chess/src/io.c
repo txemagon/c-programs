@@ -79,17 +79,37 @@ load (const char *filename, char storage[SIZE][SIZE])
 }
 
 void
+prepare_win (int line)
+{
+  int i;
+  MOVE (line, 1);
+  for (i = 0; i < 10; i++)
+    printf ("                           \n");
+  MOVE (line, 1);
+}
+
+void
 dump (char board[SIZE][SIZE])
 {
   grid_show (board);
 }
 
+int
+good_coordinates (int row, int col)
+{
+  return IN_LIMITS(row) && IN_LIMITS(col);
+}
+
 void
 ask_coordinates (int *y, int *x, const char *name)
 {
-  printf ("[%s. Posición]\n", name);
-  printf ("fila, columna: ");
+  prepare_win (PROMPT_LIN);
+  printf (BOLD_ON "[%s. Posición]" BOLD_OFF "\n", name);
+  ANSI_SWITCH_COLOR (AC_GREEN, FORE_NORMAL);
+  printf ("  fila, columna: ");
+  ANSI_SWITCH_COLOR (AC_GREEN, FORE_LIGHT);
   scanf ("%i %*[,] %i", y, x);
+  ANSI_COLOR_RESET;
   (*y)--;
   (*x)--;
 }
@@ -99,22 +119,35 @@ repeat (void)
 {
   char answer;
 
-  printf ("Otra vez (S/N): ");
+  prepare_win (PROMPT_LIN);
+  ANSI_SWITCH_COLOR (AC_GREEN, FORE_NORMAL);
+  printf ("Otra vez (" INVER_ON "s/N" INVER_OFF "): ");
   scanf (" %c", &answer);
+  ANSI_COLOR_RESET;
 
   return tolower (answer) == 's' ? 1 : 0;
-/*
-    if (tolower(answer) == 's')
-        return 1;
-
-    return 0;
-    */
 }
 
 void
-print_piece(char mark, int row, int col)
+print_piece (char mark, int row, int col)
 {
-   printf (BOLD_ON);
-   print_number(row, col, mark);
-   printf (BOLD_OFF);
+  ANSI (BOLD_ON);
+  ANSI_SWITCH_COLOR (AC_GREEN, BACK_NORMAL);
+  print_number (row, col, mark);
+  ANSI (AC_RESET BOLD_OFF);
+}
+
+void
+print_possibility (int row, int col, char board[SIZE][SIZE])
+{
+  printf ("\tComes => ");
+  ANSI_SWITCH_COLOR (AC_CYAN, BACK_LIGHT);
+  ANSI_SWITCH_COLOR (AC_WHITE, FORE_LIGHT);
+  printf (" (%i, %i):", row + 1, col + 1);
+  ANSI_COLOR_RESET;
+  printf (" ");
+  ANSI_SWITCH_COLOR (AC_CYAN, BACK_LIGHT);
+  ANSI_SWITCH_COLOR (AC_BLUE, FORE_NORMAL);
+  printf (" %c \n", board[row][col]);
+  ANSI_COLOR_RESET;
 }
