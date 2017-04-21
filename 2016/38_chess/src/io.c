@@ -13,11 +13,12 @@ const char *good_chars = "TCAKQP-";
 void
 title (const char *s)
 {
-    char command[MAX_CAR];
-    sprintf( command, "toilet -fpagga --gay %s", s);
-    system("clear");
-    system(command);
+  char command[MAX_CAR];
+  sprintf (command, "toilet -fpagga --gay '    %s    '", s);
+  system ("clear");
+  system (command);
 }
+
 void
 print_usage (FILE * output)
 {
@@ -31,11 +32,6 @@ error_ocurred ()
   error (-errno, errno, "%s\n", strerror (errno));
 }
 
-int
-repeat (void)
-{
-  return 1;
-}
 
 char
 transform (char c)
@@ -72,8 +68,10 @@ load (const char *filename, char storage[SIZE][SIZE])
       c = transform (c);
 
       if (c)
-	storage[row][col] = c;
-      col++;
+	{
+	  storage[row][col] = c;
+	  col++;
+	}
 
     }
 
@@ -83,20 +81,40 @@ load (const char *filename, char storage[SIZE][SIZE])
 void
 dump (char board[SIZE][SIZE])
 {
-    /*
-  int row, col;
-  for (row = 0; row < SIZE; row++)
-    {
-      for (col = 0; col < SIZE; col++)
-	printf ("%c ", board[row][col]);
-      printf ("\n");
-    }
-    */ 
-    muestra(board);
+  grid_show (board);
 }
 
 void
 ask_coordinates (int *y, int *x, const char *name)
 {
-  ;
+  printf ("[%s. Posición]\n", name);
+  printf ("fila, columna: ");
+  scanf ("%i %*[,] %i", y, x);
+  (*y)--;
+  (*x)--;
+}
+
+int
+repeat (void)
+{
+  char answer;
+
+  printf ("Otra vez (S/N): ");
+  scanf (" %c", &answer);
+
+  return tolower (answer) == 's' ? 1 : 0;
+/*
+    if (tolower(answer) == 's')
+        return 1;
+
+    return 0;
+    */
+}
+
+void
+print_piece(char mark, int row, int col)
+{
+   printf (BOLD_ON);
+   print_number(row, col, mark);
+   printf (BOLD_OFF);
 }

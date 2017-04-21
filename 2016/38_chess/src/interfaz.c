@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <unistd.h>
 #include "interfaz.h"
 
 #define STR(x) #x
@@ -7,9 +6,10 @@
 
 
 void
-pintar_fila (int f, int w, const char *cini, const char *cmed, const char *cfin, int space)
+pintar_fila (int f, int w, const char *cini, const char *cmed,
+	     const char *cfin, int space)
 {
-    int c, r, rv;
+  int c, r, rv;
   int vl = 1 + 2 * VSPACE + 1;
   MOVE (YBASE + vl * f, XBASE);
   printf ("%s", cini);
@@ -21,14 +21,14 @@ pintar_fila (int f, int w, const char *cini, const char *cmed, const char *cfin,
     }
   for (r = 0; r < HSPACE * 2 + CWIDTH; r++)
     printf ("%s", ACS_HLINE);
-  printf ("%s",  cfin);
+  printf ("%s", cfin);
 
   if (space)
     {
       for (rv = 0; rv < 1 + VSPACE * 2; rv++)
 	{
 	  MOVE (YBASE + vl * f + 1 + rv, XBASE);
-          printf ("%s", ACS_VLINE);
+	  printf ("%s", ACS_VLINE);
 	  for (c = 0; c < w; c++)
 	    {
 	      for (r = 0; r < HSPACE * 2 + CWIDTH; r++)
@@ -42,7 +42,7 @@ pintar_fila (int f, int w, const char *cini, const char *cmed, const char *cfin,
 void
 grid (int w, int h)
 {
-    int f;
+  int f;
 
   /* Primera fila */
   pintar_fila (0, w, ACS_ULCORNER, ACS_TTEE, ACS_URCORNER, 1);
@@ -58,22 +58,33 @@ grid (int w, int h)
 
 
 void
-pon_numero (int fila, int col, char n)
+print_number (int fila, int col, char n)
 {
+  printf (SAVE_CURSOR);
   MOVE (YBASE + 1 + VSPACE + fila * (2 + 2 * VSPACE),
-	    XBASE + 1 + HSPACE + col * (1 + 2 * HSPACE + CWIDTH));
-  printf(FORMAT_STR (CWIDTH), n);
-  fflush(stdout);
+	XBASE + 1 + HSPACE + col * (1 + 2 * HSPACE + CWIDTH));
+  printf (FORMAT_STR (CWIDTH), n);
+  fflush (stdout);
+
+  printf (RESTORE_CURSOR);
 }
 
 void
-muestra (char matriz[N][N])
+grid_show (char matriz[N][N])
 {
   int f, c;
+
+  printf (SAVE_CURSOR);
+  printf (FAINT_ON);
   grid (N, N);
+  printf (FAINT_OFF);
+
+  printf (INVER_ON);
   for (f = 0; f < N; f++)
-    for (c = 0 ; c < N; c++)
-      pon_numero (f, c, matriz[f][c]);
-  printf("\n");
-  usleep (4000000);
+    for (c = 0; c < N; c++)
+      print_number (f, c, matriz[f][c]);
+  printf ("\n");
+  printf (INVER_OFF);
+
+  printf (RESTORE_CURSOR);
 }

@@ -19,4 +19,4 @@ $(EXE): $(OBJS) $(DEPS)
 .PHONY: clean
 
 clean:
-	$(RM) *.o
+	$(RM) *.o *~

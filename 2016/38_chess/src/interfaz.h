@@ -6,7 +6,7 @@
 #include "border.h"  /* VT 100 char definitions */
 
 #define N SIZE
-#define XBASE 15
+#define XBASE 45
 #define YBASE 5
 
 #define CWIDTH 1
@@ -18,8 +18,8 @@
 extern "C" {
 #endif
 
-    void muestra(char matriz[N][N]);
-    void pon_numero(int fila, int col, char n);
+    void grid_show(char matriz[N][N]);
+    void print_number(int fila, int col, char n);
 
 #ifdef __cplusplus
 }
