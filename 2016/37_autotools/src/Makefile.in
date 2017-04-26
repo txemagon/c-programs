@@ -1,0 +1,4 @@
+all: hello
+
+clean:
+	rem -rf hello *.o
