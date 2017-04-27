@@ -8,8 +8,6 @@
 #define SIZE     8
 
 #define IN_LIMITS(x) (x)>=0 && (x)<SIZE
-#define ADD(accu, inc) accu.x += inc.x, accu.y += inc.y
-
 
 #define USAGE "\
     Usage: %s \n\
