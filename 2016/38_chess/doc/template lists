@@ -1,0 +1,23 @@
+/********** Def. esctructura ***********/
+struct list_int;
+
+typedef struct {...} _list_functions_int
+typedef struct _list_elem_int {...} list_elem_int
+typedef struct _list_int {...} List_int
+
+/********** Declaraciones de Funciones ***********/
+
+List_int *new_list_int();
+bool list_is_empty_int(const List_int *list);
+size_t list_size_int(const List_int *list);
+const int list_front_int(const List_int *list);
+void list_push_front_int(List_int *list, int elem);
+
+/********** Definiciones ***********/
+
+/********** Valores iniciales ***********/
+
+_list_functions_int _list_funcs_int = {
+    &list_is_empty_int
+}
+/********** ***********/

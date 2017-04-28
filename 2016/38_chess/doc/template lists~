@@ -1,0 +1,4 @@
+struct list_int;
+
+typedef struct {...} _list_functions_int
+typedef struct _list_elem_int {...} list_elem_int
