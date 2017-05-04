@@ -100,16 +100,38 @@ good_coordinates (int row, int col)
   return IN_LIMITS(row) && IN_LIMITS(col);
 }
 
+void prepare_read(const char *subject, const char *title, const char *prompt)
+{
+
+  prepare_win (PROMPT_LIN);
+  printf (BOLD_ON "[%s. %s]" BOLD_OFF "\n", title, subject);
+  ANSI_SWITCH_COLOR (AC_GREEN, FORE_NORMAL);
+  printf ("%s", prompt);
+  ANSI_SWITCH_COLOR (AC_GREEN, FORE_LIGHT);
+}
+
+void end_read()
+{
+  ANSI_COLOR_RESET;
+}
+
+void
+ask_piece (enum TPiece *piece)
+{
+    prepare_read("Seleccionar", "Pieza",
+             "\t1.- Torre\n"
+             "\t3.- Alfil\n"
+             "  Elección: ");
+    scanf(" %u", piece);
+    end_read();
+}
+
 void
 ask_coordinates (int *y, int *x, const char *name)
 {
-  prepare_win (PROMPT_LIN);
-  printf (BOLD_ON "[%s. Posición]" BOLD_OFF "\n", name);
-  ANSI_SWITCH_COLOR (AC_GREEN, FORE_NORMAL);
-  printf ("  fila, columna: ");
-  ANSI_SWITCH_COLOR (AC_GREEN, FORE_LIGHT);
+  prepare_read("Posición", name, "  fila, columna: ");
   scanf ("%i %*[,] %i", y, x);
-  ANSI_COLOR_RESET;
+  end_read();
   (*y)--;
   (*x)--;
 }

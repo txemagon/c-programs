@@ -27,8 +27,8 @@ struct TVector **movements[] = {
 struct Piece set[] = {
    {pawn,   'P', {"♙", "♟"}, "Peón"},
    {rook,   'T', {"♖", "♜"}, "Torre"},
-   {bishop, 'A', {"♗", "♝"}, "Alfil"},
    {knight, 'C', {"♘", "♞"}, "Caballo"},
+   {bishop, 'A', {"♗", "♝"}, "Alfil"},
    {queen,  'Q', {"♕", "♛"}, "Reina"},
    {king,   'K', {"♔", "♚"}, "Rey"}
 };

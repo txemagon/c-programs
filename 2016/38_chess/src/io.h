@@ -22,6 +22,7 @@ void print_piece(char mark, int row, int col);
 void print_possibility(int row, int col, char board[SIZE][SIZE]);
 int good_coordinates (int row, int col);
 void ask_coordinates (int *y, int *x, const char *name);
+void ask_piece(enum TPiece *piece);
 void title(const char *s);
 
 #ifdef __cplusplus
