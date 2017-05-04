@@ -24,6 +24,15 @@ struct TVector **movements[] = {
     pawn_mv, rook_mv, knight_mv, bishop_mv
     };
 
+struct Piece set[] = {
+   {pawn,   'P', {"♙", "♟"}, "Peón"},
+   {rook,   'T', {"♖", "♜"}, "Torre"},
+   {bishop, 'A', {"♗", "♝"}, "Alfil"},
+   {knight, 'C', {"♘", "♞"}, "Caballo"},
+   {queen,  'Q', {"♕", "♛"}, "Reina"},
+   {king,   'K', {"♔", "♚"}, "Rey"}
+};
+
 
 int
 is_empty (int row, int col, char board[SIZE][SIZE])
@@ -54,7 +63,7 @@ check (int row, int col, char board[SIZE][SIZE], enum TPiece piece)
 
   prepare_win (OUT_LIN);
   printf (BOLD_ON
-	  "\tCOMPROBANDO EL ALFIL\n" "\t====================\n\n" BOLD_OFF);
+	  "\tCOMPROBANDO EL %s\n" "\t====================\n\n" BOLD_OFF, set[piece].name);
 
   for (i=0; movements[piece][i] != NULL; i++)
       check_direction(row, col, *movements[piece][i], board);

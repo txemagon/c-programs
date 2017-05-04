@@ -5,23 +5,6 @@
 #include "io.h"
 #include "algorithms.h"
 
-struct Color {
-    const char *white;
-    const char *black;
-};
-
-struct Piece {
-    enum TPiece class_number;
-    char symbol;
-    struct Color bs;   /* Board Symbol */
-    const char *name;
-};
-
-struct Piece set[] = {
-   {pawn, 'P', {"♙", "♟"}, "Peón"},
-   {}
-
-};
 int
 main (int argc, char *argv[])
 {
@@ -35,12 +18,12 @@ main (int argc, char *argv[])
       dump (chess_board);
       do
 	{
-	  ask_coordinates (&row, &col, "Alfil");
+	  ask_coordinates (&row, &col, set[rook].name);
 	}
       while (!good_coordinates (row, col) ||
 	     !is_empty (row, col, chess_board));
-      print_piece ('A', row, col);
-      check (row, col, chess_board, set[pawn].class_number);
+      print_piece (set[rook].symbol, row, col);
+      check (row, col, chess_board, set[rook].class_number);
     }
   while (repeat ());
 

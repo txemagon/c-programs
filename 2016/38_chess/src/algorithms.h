@@ -14,6 +14,21 @@ struct TVector {
 
 enum TPiece {pawn, rook, knight, bishop, queen, king };
 
+struct Color {
+    const char *white;
+    const char *black;
+};
+
+struct Piece {
+    enum TPiece class_number;
+    char symbol;
+    struct Color bs;   /* Board Symbol */
+    const char *name;
+};
+
+extern struct Piece set[];
+
+
 #ifdef __cplusplus
 extern "C"
 {

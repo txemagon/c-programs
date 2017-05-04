@@ -4,7 +4,7 @@ CFLAGS = -g
 LDLIBS = 
 
 DEPS = $(wildcard *.h)
-OBJS = $(patsubst %.o, %.c, $(wildcard *.c))
+OBJS = $(patsubst %.c, %.o, $(wildcard *.c))
 
 EXE  = chess
 
