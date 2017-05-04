@@ -18,8 +18,8 @@
 extern "C" {
 #endif
 
-    void grid_show(char matriz[N][N]);
-    void print_number(int fila, int col, char n);
+    void grid_show(char matriz[N][N], const char *(*transform)(void *mark));
+    void print_number(int fila, int col, const char *n);
 
 #ifdef __cplusplus
 }

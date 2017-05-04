@@ -9,6 +9,12 @@
 #include <errno.h>
 
 const char *good_chars = "TCAKQP-";
+enum TColor color = white;
+
+void set_color(enum TColor new_color)
+{
+    color = new_color;
+}
 
 void
 title (const char *s)
@@ -88,10 +94,20 @@ prepare_win (int line)
   MOVE (line, 1);
 }
 
+const char *transform_char(void *mark)
+{
+    int i;
+    char c = *((char *) mark);
+    const char *result;
+    for (i=0; set[i].symbol != c && i<PIECES; i++);
+    result = color == white ? set[i].bs.white : set[i].bs.black;
+    return result;
+}
+
 void
 dump (char board[SIZE][SIZE])
 {
-  grid_show (board);
+  grid_show (board, &transform_char);
 }
 
 int
@@ -155,7 +171,7 @@ print_piece (char mark, int row, int col)
 {
   ANSI (BOLD_ON);
   ANSI_SWITCH_COLOR (AC_GREEN, BACK_NORMAL);
-  print_number (row, col, mark);
+  print_number (row, col, transform_char(&mark));
   ANSI (AC_RESET BOLD_OFF);
 }
 

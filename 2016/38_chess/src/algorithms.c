@@ -30,7 +30,8 @@ struct Piece set[] = {
    {knight, 'C', {"♘", "♞"}, "Caballo"},
    {bishop, 'A', {"♗", "♝"}, "Alfil"},
    {queen,  'Q', {"♕", "♛"}, "Reina"},
-   {king,   'K', {"♔", "♚"}, "Rey"}
+   {king,   'K', {"♔", "♚"}, "Rey"},
+   {nop,    ' ', {" ", " "}, "Espacio"}
 };
 
 

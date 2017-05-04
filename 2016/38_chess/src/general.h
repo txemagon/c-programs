@@ -15,7 +15,7 @@
            and checks for tower possibilities.\n\
 "
 
-enum TPiece {pawn, rook, knight, bishop, queen, king };
+enum TPiece {pawn, rook, knight, bishop, queen, king, nop };
 
 struct Color {
     const char *white;
@@ -29,7 +29,8 @@ struct Piece {
     const char *name;
 };
 
-extern struct Piece set[];
+#define PIECES 7
+extern struct Piece set[PIECES];
 
 
 #endif

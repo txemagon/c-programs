@@ -9,11 +9,14 @@
 #define PROMPT_LIN 17
 #define EXIT_LIN 23
 
+enum TColor {white, black};
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
+void set_color(enum TColor new_color);
 int repeat (void);  /* true if users wants to repeat */
 void load (const char *filename, char storage[SIZE][SIZE]);
 void prepare_win(int line);

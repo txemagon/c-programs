@@ -58,19 +58,20 @@ grid (int w, int h)
 
 
 void
-print_number (int fila, int col, char n)
+print_number (int fila, int col, const char *n)
 {
   ANSI (SAVE_CURSOR);
   MOVE (YBASE + 1 + VSPACE + fila * (2 + 2 * VSPACE),
 	XBASE + 1 + HSPACE + col * (1 + 2 * HSPACE + CWIDTH));
-  printf (FORMAT_STR (CWIDTH), n);
+  //printf (FORMAT_STR (CWIDTH), n);
+  printf ("%s", n);
   fflush (stdout);
 
   ANSI (RESTORE_CURSOR);
 }
 
 void
-grid_show (char matriz[N][N])
+grid_show (char matriz[N][N], const char *(*transform)(void *mark) )
 {
   int f, c;
 
@@ -81,7 +82,7 @@ grid_show (char matriz[N][N])
   ANSI (INVER_ON);
   for (f = 0; f < N; f++)
     for (c = 0; c < N; c++)
-      print_number (f, c, matriz[f][c]);
+      print_number (f, c, (*transform) (&matriz[f][c]) );
   ANSI (INVER_OFF);
   printf ("\n");
 }

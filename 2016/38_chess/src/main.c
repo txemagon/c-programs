@@ -14,6 +14,7 @@ main (int argc, char *argv[])
 
   do
     {
+      set_color(white);
       load (BOARD_FN, chess_board);
       title ("chess");
       dump (chess_board);
@@ -24,6 +25,7 @@ main (int argc, char *argv[])
 	}
       while (!good_coordinates (row, col) ||
 	     !is_empty (row, col, chess_board));
+      set_color(black);
       print_piece (set[piece].symbol, row, col);
       check (row, col, chess_board, set[piece].class_number);
     }
