@@ -5,16 +5,28 @@
 #include "io.h"
 #include "algorithms.h"
 
+struct Color {
+    const char *white;
+    const char *black;
+};
 
+struct Piece {
+    enum TPiece class_number;
+    char symbol;
+    struct Color bs;   /* Board Symbol */
+    const char *name;
+};
+
+struct Piece set[] = {
+   {pawn, 'P', {"♙", "♟"}, "Peón"},
+   {}
+
+};
 int
 main (int argc, char *argv[])
 {
   char chess_board[SIZE][SIZE];
   int row, col;
-  int (*p_check[2])(int row, int col, char board[SIZE][SIZE]) = {
-      &rook_check,
-      &bishop_check
-  };
 
   do
     {
@@ -28,7 +40,7 @@ main (int argc, char *argv[])
       while (!good_coordinates (row, col) ||
 	     !is_empty (row, col, chess_board));
       print_piece ('A', row, col);
-      (*p_check[1]) (row, col, chess_board);
+      check (row, col, chess_board, set[pawn].class_number);
     }
   while (repeat ());
 
