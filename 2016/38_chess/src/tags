@@ -1,0 +1,148 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACS_BTEE	border.h	10;"	d
+ACS_HLINE	border.h	1;"	d
+ACS_LLCORNER	border.h	9;"	d
+ACS_LRCORNER	border.h	11;"	d
+ACS_LTEE	border.h	6;"	d
+ACS_PLUS	border.h	7;"	d
+ACS_RTEE	border.h	8;"	d
+ACS_TTEE	border.h	4;"	d
+ACS_ULCORNER	border.h	3;"	d
+ACS_URCORNER	border.h	5;"	d
+ACS_VLINE	border.h	2;"	d
+AC_BLACK	ansi.h	9;"	d
+AC_BLUE	ansi.h	13;"	d
+AC_CYAN	ansi.h	15;"	d
+AC_DFLT	ansi.h	17;"	d
+AC_GREEN	ansi.h	11;"	d
+AC_MAGENTA	ansi.h	14;"	d
+AC_RED	ansi.h	10;"	d
+AC_RESET	ansi.h	4;"	d
+AC_WHITE	ansi.h	16;"	d
+AC_YELLOW	ansi.h	12;"	d
+ADD	algorithms.h	8;"	d
+ANSI	ansi.h	52;"	d
+ANSI_COLOR	ansi.h	25;"	d
+ANSI_COLOR_RESET	ansi.h	5;"	d
+ANSI_RESET	ansi.h	40;"	d
+ANSI_SWITCH_COLOR	ansi.h	26;"	d
+BACK_LIGHT	ansi.h	23;"	d
+BACK_NORMAL	ansi.h	22;"	d
+BOARD_FN	general.h	7;"	d
+BOLD_OFF	ansi.h	32;"	d
+BOLD_ON	ansi.h	29;"	d
+CC	Makefile	/^CC = cc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -g$/;"	m
+CURSOR_OFF	ansi.h	48;"	d
+CURSOR_ON	ansi.h	49;"	d
+CWIDTH	interfaz.h	12;"	d
+Color	general.h	/^struct Color {$/;"	s
+DEPS	Makefile	/^DEPS = $(wildcard *.h)$/;"	m
+DOWN	algorithms.c	7;"	d	file:
+DOWN_LEFT	algorithms.c	8;"	d	file:
+EXE	Makefile	/^EXE  = chess$/;"	m
+EXIT_LIN	io.h	10;"	d
+FAINT_OFF	ansi.h	31;"	d
+FAINT_ON	ansi.h	30;"	d
+FORE_LIGHT	ansi.h	21;"	d
+FORE_NORMAL	ansi.h	20;"	d
+FORMAT_STR	interfaz.c	5;"	d	file:
+GO_DOWN	ansi.h	55;"	d
+GO_UP	ansi.h	56;"	d
+HSPACE	interfaz.h	13;"	d
+INVER_OFF	ansi.h	38;"	d
+INVER_ON	ansi.h	37;"	d
+IN_LIMITS	general.h	10;"	d
+ITALICS_OFF	ansi.h	34;"	d
+ITALICS_ON	ansi.h	33;"	d
+LDLIBS	Makefile	/^LDLIBS = $/;"	m
+LEFT	algorithms.c	9;"	d	file:
+LEFT_UP	algorithms.c	10;"	d	file:
+MAX_CAR	io.h	7;"	d
+MOVE	ansi.h	54;"	d
+N	interfaz.h	8;"	d
+OBJS	Makefile	/^OBJS = $(patsubst %.c, %.o, $(wildcard *.c))$/;"	m
+OUT_LIN	io.h	8;"	d
+PIECES	general.h	32;"	d
+PROMPT_LIN	io.h	9;"	d
+Piece	general.h	/^struct Piece {$/;"	s
+RESTORE_CURSOR	ansi.h	47;"	d
+RIGHT	algorithms.c	5;"	d	file:
+RIGHT_DOWN	algorithms.c	6;"	d	file:
+SAVE_CURSOR	ansi.h	46;"	d
+SIZE	general.h	8;"	d
+STR	interfaz.c	4;"	d	file:
+TColor	io.h	/^enum TColor {white, black};$/;"	g
+TPiece	general.h	/^enum TPiece {pawn, rook, knight, bishop, queen, king, nop };$/;"	g
+TVector	algorithms.h	/^struct TVector {$/;"	s
+UNDER_OFF	ansi.h	36;"	d
+UNDER_ON	ansi.h	35;"	d
+UP	algorithms.c	3;"	d	file:
+UP_RIGHT	algorithms.c	4;"	d	file:
+USAGE	general.h	12;"	d
+VSPACE	interfaz.h	14;"	d
+XBASE	interfaz.h	9;"	d
+YBASE	interfaz.h	10;"	d
+_GNU_SOURCE	general.h	4;"	d
+__ALGORITHMS_H__	algorithms.h	2;"	d
+__ANSI_COLORS_	ansi.h	2;"	d
+__GENERAL_H__	general.h	2;"	d
+__INTERFAZ_H__	interfaz.h	2;"	d
+__IO_H__	io.h	2;"	d
+ask_coordinates	io.c	/^ask_coordinates (int *y, int *x, const char *name)$/;"	f
+ask_piece	io.c	/^ask_piece (enum TPiece *piece)$/;"	f
+bishop	general.h	/^enum TPiece {pawn, rook, knight, bishop, queen, king, nop };$/;"	e	enum:TPiece
+bishop_mv	algorithms.c	/^struct TVector *bishop_mv[] = { &UP_RIGHT, &LEFT_UP, &RIGHT_DOWN, &DOWN_LEFT, NULL };$/;"	v	typeref:struct:TVector
+black	general.h	/^    const char *black;$/;"	m	struct:Color
+black	io.h	/^enum TColor {white, black};$/;"	e	enum:TColor
+bs	general.h	/^    struct Color bs;   \/* Board Symbol *\/$/;"	m	struct:Piece	typeref:struct:Piece::Color
+check	algorithms.c	/^check (int row, int col, char board[SIZE][SIZE], enum TPiece piece)$/;"	f
+check_direction	algorithms.c	/^check_direction (int row, int col, struct TVector dir, char board[SIZE][SIZE])$/;"	f
+class_number	general.h	/^    enum TPiece class_number;$/;"	m	struct:Piece	typeref:enum:Piece::TPiece
+color	io.c	/^enum TColor color = white;$/;"	v	typeref:enum:TColor
+define_list	template_list.h	1;"	d
+direction	algorithms.c	/^struct TVector direction[] = {$/;"	v	typeref:struct:TVector
+dump	io.c	/^dump (char board[SIZE][SIZE])$/;"	f
+end_read	io.c	/^void end_read()$/;"	f
+error_ocurred	io.c	/^error_ocurred ()$/;"	f
+good_chars	io.c	/^const char *good_chars = "TCAKQP-";$/;"	v
+good_coordinates	io.c	/^good_coordinates (int row, int col)$/;"	f
+grid	interfaz.c	/^grid (int w, int h)$/;"	f
+grid_show	interfaz.c	/^grid_show (char matriz[N][N], const char *(*transform)(void *mark) )$/;"	f
+is_empty	algorithms.c	/^is_empty (int row, int col, char board[SIZE][SIZE])$/;"	f
+king	general.h	/^enum TPiece {pawn, rook, knight, bishop, queen, king, nop };$/;"	e	enum:TPiece
+knight	general.h	/^enum TPiece {pawn, rook, knight, bishop, queen, king, nop };$/;"	e	enum:TPiece
+knight_mv	algorithms.c	/^struct TVector *knight_mv[] = { NULL };$/;"	v	typeref:struct:TVector
+load	io.c	/^load (const char *filename, char storage[SIZE][SIZE])$/;"	f
+main	main.c	/^main (int argc, char *argv[])$/;"	f
+movements	algorithms.c	/^struct TVector **movements[] = {$/;"	v	typeref:struct:TVector
+name	general.h	/^    const char *name;$/;"	m	struct:Piece
+nop	general.h	/^enum TPiece {pawn, rook, knight, bishop, queen, king, nop };$/;"	e	enum:TPiece
+pawn	general.h	/^enum TPiece {pawn, rook, knight, bishop, queen, king, nop };$/;"	e	enum:TPiece
+pawn_mv	algorithms.c	/^struct TVector *pawn_mv[] = { &DOWN, NULL };$/;"	v	typeref:struct:TVector
+pintar_fila	interfaz.c	/^pintar_fila (int f, int w, const char *cini, const char *cmed,$/;"	f
+prepare_read	io.c	/^void prepare_read(const char *subject, const char *title, const char *prompt)$/;"	f
+prepare_win	io.c	/^prepare_win (int line)$/;"	f
+print_number	interfaz.c	/^print_number (int fila, int col, const char *n)$/;"	f
+print_piece	io.c	/^print_piece (char mark, int row, int col)$/;"	f
+print_possibility	io.c	/^print_possibility (int row, int col, char board[SIZE][SIZE])$/;"	f
+print_usage	io.c	/^print_usage (FILE * output)$/;"	f
+queen	general.h	/^enum TPiece {pawn, rook, knight, bishop, queen, king, nop };$/;"	e	enum:TPiece
+repeat	io.c	/^repeat (void)$/;"	f
+rook	general.h	/^enum TPiece {pawn, rook, knight, bishop, queen, king, nop };$/;"	e	enum:TPiece
+rook_mv	algorithms.c	/^struct TVector *rook_mv[] = { &RIGHT, &LEFT, &UP, &DOWN, NULL };$/;"	v	typeref:struct:TVector
+set	algorithms.c	/^struct Piece set[] = {$/;"	v	typeref:struct:Piece
+set_color	io.c	/^void set_color(enum TColor new_color)$/;"	f
+symbol	general.h	/^    char symbol;$/;"	m	struct:Piece
+title	io.c	/^title (const char *s)$/;"	f
+transform	io.c	/^transform (char c)$/;"	f
+transform_char	io.c	/^const char *transform_char(void *mark)$/;"	f
+white	general.h	/^    const char *white;$/;"	m	struct:Color
+white	io.h	/^enum TColor {white, black};$/;"	e	enum:TColor
+x	algorithms.h	/^    int x;$/;"	m	struct:TVector
+y	algorithms.h	/^    int y;$/;"	m	struct:TVector
