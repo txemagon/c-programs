@@ -15,6 +15,12 @@
            and checks for tower possibilities.\n\
 "
 
+struct TVector {
+    int x;
+    int y;
+};
+
+
 enum TPiece {pawn, rook, knight, bishop, queen, king, nop };
 
 struct Color {
@@ -27,6 +33,8 @@ struct Piece {
     char symbol;
     struct Color bs;   /* Board Symbol */
     const char *name;
+    int (*my_check) (int, int, struct TVector, char [SIZE][SIZE]);
+
 };
 
 #define PIECES 7

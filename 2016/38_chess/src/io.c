@@ -136,6 +136,7 @@ ask_piece (enum TPiece *piece)
 {
     prepare_read("Seleccionar", "Pieza",
              "\t1.- Torre\n"
+             "\t2.- Caballo\n"
              "\t3.- Alfil\n"
              "  Elección: ");
     scanf(" %u", piece);

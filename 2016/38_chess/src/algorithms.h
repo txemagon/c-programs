@@ -6,12 +6,6 @@
 #include "io.h"
 
 #define ADD(accu, inc) accu.x += inc.x, accu.y += inc.y
-
-struct TVector {
-    int x;
-    int y;
-};
-
 #ifdef __cplusplus
 extern "C"
 {
