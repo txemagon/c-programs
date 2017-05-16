@@ -29,9 +29,11 @@ h2 {
 }
 
 canvas {
-    width: 900px;
-    height: 450px;
     margin: 50px auto;
     border: 1px solid black;
     background-color: white;
+}
+
+#log {
+    color: gray;
 }
