@@ -6,6 +6,6 @@ var str_square = [
      { x: 100, y: 0  }
 ]
 
-function example1(ctx) {
-     raster(ctx, str_square)
+function example2(ctx) {
+     trace(ctx, arr_square, true, true)
 }

@@ -16,7 +16,8 @@ function main() {
             var module = modules[m]
             return function() {
             try {
-              eval( module + '()')
+              var ctx = document.getElementById(module).getContext("2d")
+              eval( module + '(ctx)')
             } catch(e) {
                 log.innerHTML += e.toString() + ' => General type module: ' + module + '<br/>\n'
             }
