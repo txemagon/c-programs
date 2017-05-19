@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/general.css"></link>
     <script src="javascript/main.js"></script>
 </head>
-<body onload="main();">
+<body onload="main();" onkeydown="change_view(event);">
   <div id="page">
     <h1>Geometry Staff</h1>
 
@@ -27,6 +27,13 @@
       <p>How to paint a dog</p>
       <canvas id="example3" width="1000" height="450"></canvas>
     </div>
+
+    <div class="Example">
+      <h2>3D Projection</h2>
+      <p>A 3D CUBE</p>
+      <canvas id="example4" width="1000" height="450"></canvas>
+    </div>
+
 
     <div id="log">
         <h3>Load Info</h3>
