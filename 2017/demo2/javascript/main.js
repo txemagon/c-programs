@@ -1,7 +1,7 @@
 var W = 640
 var H = 400
 var R = 100
-
+var S = []
 
 
 function init(fuente, dest) {
@@ -16,19 +16,20 @@ function init(fuente, dest) {
         dest.fill()
     }
 
-    for (var i=0; i<600000; i++){
-        x = Math.random() * W
-        y = Math.random() * H
-        r = Math.random() * ( R - 20 * (Math.log10(i)) )
-        if (r<1) r = 1
-        color = fuente.getImageData(x, y, 1, 1).data
-        function a(x, y, r, red, green, blue){
-            setTimeout(paint, 1, x, y, r, red, green, blue)
+    for (var y=0; y<H; y++){
+        S[y] = []
+        for (var x=0; x<W; x++){
+            color = fuente.getImageData(x, y, 1, 1).data
+            function a(x, y, r, red, green, blue){
+                setTimeout(paint, 1, x, y, r, red, green, blue)
+            }
+            var cm = (color[0] + color[1] + color[2]) / 3
+            S[y][x] +=
+            a(x, y, r, color[1], color[2], color[0])
         }
-        var cm = (color[0] + color[1] + color[2]) / 3
-        a(x, y, r, color[1], color[2], color[0])
     }
 }
+
 
 function main() {
     var papel = document.getElementById("papel").getContext("2d")

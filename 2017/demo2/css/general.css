@@ -1,0 +1,17 @@
+body {
+    font-family: arial;
+    margin: 0px;
+    padding: 0px
+}
+
+#page {
+    margin: 0 auto 0 auto;
+    width: 1300px;
+    padding: 0em 4em;
+    border: 1px solid black;
+    border-style: none solid;
+}
+
+canvas {
+    border: 1px solid black;
+}
