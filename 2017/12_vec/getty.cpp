@@ -20,5 +20,6 @@ int main(){
         printf("%6.2lf", vec[componente]);
     printf(" )\n");
 
+    free(vec);
     return EXIT_SUCCESS;
 }
