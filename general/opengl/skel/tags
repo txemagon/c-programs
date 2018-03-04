@@ -1,0 +1,35 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC=g++$/;"	m
+DirectoryOfThisScript	src/.ycm_extra_conf.py	/^def DirectoryOfThisScript():$/;"	f
+Display	include/display.h	/^        Display(const Display &other) {}$/;"	f	class:Display
+Display	include/display.h	/^class Display$/;"	c
+Display	src/display.cpp	/^Display::Display(int width, int height, const std::string &title)$/;"	f	class:Display
+EXE	Makefile	/^EXE = rungl$/;"	m
+FlagsForFile	src/.ycm_extra_conf.py	/^def FlagsForFile( filename, **kwargs ):$/;"	f
+GetCompilationInfoForFile	src/.ycm_extra_conf.py	/^def GetCompilationInfoForFile( filename ):$/;"	f
+INCLUDE	Makefile	/^INCLUDE = .\/include$/;"	m
+IsClosed	src/display.cpp	/^bool Display::IsClosed()$/;"	f	class:Display
+IsHeaderFile	src/.ycm_extra_conf.py	/^def IsHeaderFile( filename ):$/;"	f
+OBJ	Makefile	/^OBJ = $(SRC:$(SRC_DIR)\/%.cpp=$(OBJ_DIR)\/%.o)$/;"	m
+OBJ_DIR	Makefile	/^OBJ_DIR = obj$/;"	m
+SOURCE_EXTENSIONS	src/.ycm_extra_conf.py	/^SOURCE_EXTENSIONS = [ '.cpp', '.cxx', '.cc', '.c', '.m', '.mm' ]$/;"	v
+SRC	Makefile	/^SRC = $(wildcard $(SRC_DIR)\/*.cpp)$/;"	m
+SRC_DIR	Makefile	/^SRC_DIR = src$/;"	m
+Update	src/display.cpp	/^void Display::Update()$/;"	f	class:Display
+clear	src/display.cpp	/^void Display::clear(float r, float g, float b, float a)$/;"	f	class:Display
+compilation_database_folder	src/.ycm_extra_conf.py	/^compilation_database_folder = ''$/;"	v
+database	src/.ycm_extra_conf.py	/^  database = None$/;"	v
+database	src/.ycm_extra_conf.py	/^  database = ycm_core.CompilationDatabase( compilation_database_folder )$/;"	v
+display_INC	include/display.h	2;"	d
+flags	src/.ycm_extra_conf.py	/^flags = [$/;"	v
+m_glContext	include/display.h	/^        SDL_GLContext m_glContext;$/;"	m	class:Display
+m_isClosed	include/display.h	/^        bool m_isClosed;$/;"	m	class:Display
+m_window	include/display.h	/^        SDL_Window *m_window;$/;"	m	class:Display
+main	src/main.cpp	/^main ( int argc, char *argv[] )$/;"	f
+operator =	include/display.h	/^        void  operator=(const Display &other) { }$/;"	f	class:Display
+~Display	src/display.cpp	/^Display::~Display()$/;"	f	class:Display
