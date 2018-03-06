@@ -32,8 +32,22 @@ void poblacion_inicial(int matriz[M][N]) {
         dame_coord(&x, &y);
 
         if ( SON_VALIDAS(x,y) )
-            matriz[x][y] = 1;
+            matriz[x][y] = (matriz[x][y] + 1) % 2;
 
     } while ( SON_VALIDAS(x,y) );
 }
 
+void rellena(int matriz[M][N]){
+    int iniciales;
+    int x, y;
+
+    system("clear");
+    printf("Cuántos puntos iniciales quieres?: ");
+    scanf(" %i", &iniciales);
+
+    for (int n=0; n<iniciales; n++) {
+        x = rand() % M;
+        y = rand() % N;
+        matriz[x][y] = 1;
+    }
+}
