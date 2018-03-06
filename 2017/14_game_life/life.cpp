@@ -8,16 +8,14 @@
 #define CAR_LLENO "▒"
 #define CAR_VACIO "░"
 
+#define SON_VALIDAS(f,c) (((f)>=0 && (f)<M) && ((c)>=0 && (c)<N))
+
 void pintar(int matriz[M][N]) {
     for (int fila=0; fila<M; fila++) {
         for (int col=0; col<N; col++)
             printf("%s", matriz[fila][col]? CAR_LLENO : CAR_VACIO);
         printf("\n");
     }
-}
-
-bool es_valido(int x, int y) {
-    return (x>=0 && x<M) && (y>=0 && y<N);
 }
 
 void poblacion_inicial(int matriz[M][N]) {
@@ -32,9 +30,10 @@ void poblacion_inicial(int matriz[M][N]) {
         scanf(" %i, %i", &x, &y);
         x--, y--;
 
-        // todo: validar los caracteres antes de meterlos.
-        matriz[x][y] = 1;
-    } while ( es_valido(x, y) );
+        if ( SON_VALIDAS(x,y) )
+            matriz[x][y] = 1;
+
+    } while ( SON_VALIDAS(x,y) );
 }
 
 int main(){
