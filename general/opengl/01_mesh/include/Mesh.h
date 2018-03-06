@@ -2,11 +2,12 @@
 #define MESH_H
 
 #include <glm/glm.hpp>
+#include <GL/glew.h>
 
 class Vertex
 {
     public:
-        Vertex(glm::vec3& pos)
+        Vertex(glm::vec3 pos)
         {
             this->pos = pos;
         }
