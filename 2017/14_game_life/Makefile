@@ -1,4 +1,5 @@
 CC = g++
+CFLAGS = -g
 
 .PHONY: clean
 
@@ -6,10 +7,10 @@ all: life
 
 
 life: interfaz.o life.o
-	$(CC) -o life life.o interfaz.o
+	$(CC) $(CFLAGS) -o life life.o interfaz.o
 
 %.o: %.cpp
-	$(CC) -c $<
+	$(CC) $(CFLAGS) -c $<
 
 clean:
 	$(RM) *.o

@@ -1,13 +1,14 @@
 #include <stdlib.h>
 #include <strings.h>
 #include <unistd.h>
+#include <time.h>
 
 #include "global.h"
 #include "interfaz.h"
 
-#define MIN_SUPERV 2
-#define ASENTAR    3
-#define SUPERPO    6
+#define MIN_SUPERV 1
+#define ASENTAR    2
+#define SUPERPO    4
 
 enum {ACTUAL, FUTURO, TIEMPOS};
 
@@ -31,7 +32,7 @@ void calcular(int futuro[M][N], int actual[M][N])
             if (n_vecinos < MIN_SUPERV)
                 futuro[f][c] = 0;
             if (n_vecinos >=  ASENTAR && n_vecinos < SUPERPO)
-                futuro[f][c] = 1;
+                futuro[f][c] = futuro[f][c] || (rand() % 2);// futuro[f][c] = 1; // Esto era antes pero voy a meter aleatoriedad.
             if (n_vecinos >=  SUPERPO)
                 futuro[f][c] = 0;
         }
@@ -45,6 +46,7 @@ int main(){
     int (*futuro)[M][N] = &mundo[FUTURO];
     int (*aux)[M][N];
 
+    srand(time(NULL));
     bzero(mundo[ACTUAL], sizeof(mundo[ACTUAL]));
     rellena(*actual);
     poblacion_inicial(mundo[ACTUAL]);
@@ -57,7 +59,7 @@ int main(){
         actual = futuro;
         futuro = aux;
         pintar(mundo[ACTUAL]);
-        sleep(1);
+        usleep(100000);
     }
 
     return EXIT_SUCCESS;
