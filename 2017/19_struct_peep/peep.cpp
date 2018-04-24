@@ -3,16 +3,16 @@
 
 #define N 6
 
-struct TEmpleado {
+typedef struct {
     int id;
     int saldo;
     double sueldo;
     char name[N];
-};
+} Empleado;
 
 int main(){
 
-    struct TEmpleado jefe = {  27, -13, 23.5, "Ramon" };
+    Empleado jefe = {  27, -13, 23.5, "Ramon" };
     void *p = (void *) &jefe;
 
     printf("Jefe reside en %p\n", p);
