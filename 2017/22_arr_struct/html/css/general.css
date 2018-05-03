@@ -1,0 +1,29 @@
+body {
+    font-family: arial;
+    margin: 0px;
+    padding: 0px;
+}
+
+#pagina {
+    margin: 0 auto;
+    padding: 30px;
+    width: 1100px;
+    border: 1px solid black;
+    border-style: none solid;
+}
+
+h1 {
+    background: linear-gradient(to right, blue, white);
+    padding: .5ex;
+    color: white;
+}
+
+#editor {
+    padding: 30px;
+    width: 200px;
+    float: right;
+}
+
+canvas {
+    border: 1px solid black;
+}
