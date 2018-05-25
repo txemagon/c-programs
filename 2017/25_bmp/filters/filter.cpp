@@ -25,8 +25,8 @@ int main(){
 
     /* Escala de grises */
     for (int i=0; i<pixels; i++){
-        char media = (char) sqrt( (imagen[i].r * imagen[i].r + imagen[i].g * imagen[i].g + imagen[i].b * imagen[i].b) ) ;
-        imagen[i].r = imagen[i].g = imagen[i].b = media;
+        unsigned char media = (unsigned char) sqrt( (imagen[i].r * imagen[i].r + imagen[i].g * imagen[i].g + imagen[i].b * imagen[i].b) ) ;
+        imagen[i].r = imagen[i].g = imagen[i].b =  (media > 100) ? (unsigned char) 255 : 0;
     }
 
     /* Escribir la imagen */
