@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "bmp.h"
 
 const char *source= "a.bmp";
@@ -24,7 +25,7 @@ int main(){
 
     /* Escala de grises */
     for (int i=0; i<pixels; i++){
-        char media = imagen[i].r + imagen[i].g + imagen[i].b / 3;
+        char media = (char) sqrt( (imagen[i].r * imagen[i].r + imagen[i].g * imagen[i].g + imagen[i].b * imagen[i].b) ) ;
         imagen[i].r = imagen[i].g = imagen[i].b = media;
     }
 
