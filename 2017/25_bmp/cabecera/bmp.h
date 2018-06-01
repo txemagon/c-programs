@@ -1,8 +1,8 @@
 #pragma pack(1)
 typedef struct {
-    char r;
-    char g;
-    char b;
+    unsigned char r;
+    unsigned char g;
+    unsigned char b;
 } Color;
 
 typedef struct {
