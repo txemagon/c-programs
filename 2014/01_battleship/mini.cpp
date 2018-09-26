@@ -1,20 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+using namespace std;
 
 int main(int argc, char * argv[]) {
     int tablero, disparo; // Declarar variables.
 
-    printf("Introduzca tablero: "); // Imprime
-    scanf(" %i", &tablero);         // Lee
+    cout<<("Introduzca tablero: "); // Imprime
+    cin>>tablero;         // Lee
 
-    printf("Introduzca disparo: ");
-    scanf(" %i", &disparo);
+    cout<<"Introduzca disparo: ";
+    cin>>disparo;
 
     if ( (tablero & disparo) != 0)
-	printf("Hundido\n");
+    {
+	cout<<"Hundido\n";
+    }
     else
-	printf("Agua\n");
+    {
+	cout<<"Agua\n";
+    }
 
 
-    return EXIT_SUCCESS;  
+    return success;  
 }
