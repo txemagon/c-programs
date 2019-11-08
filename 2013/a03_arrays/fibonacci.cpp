@@ -9,11 +9,11 @@ int main(int argc, char *argv[]){
 
     f[1] = f[0] = 1;
     
-    for(int i=2; i<N; i++)
+    for(int i=2; i<N; i++)// for loop//
 	f[i] = f[i-1] + f[i-2];
 
-    for(int i=0; i<N; i++)
-	printf("%i ", f[i]);
+    for(int i=0; i<N; i++)// for loop//
+	printf("%i ", f[i]);// print the series//
     printf("\n");
 
     return EXIT_SUCCESS;
